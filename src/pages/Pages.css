@@ -1,0 +1,158 @@
+/* ==========================================================================
+   CBIT ESPORTS - SUBPAGE COMMON STYLES
+   ========================================================================== */
+
+.page-container {
+  min-height: calc(100vh - var(--header-height) - 300px);
+  padding-bottom: var(--space-2xl);
+}
+
+.page-hero {
+  padding: 64px 0 48px;
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-subtle);
+  margin-bottom: var(--space-xl);
+}
+
+.page-hero-title {
+  font-size: var(--text-4xl);
+  font-weight: var(--weight-bold);
+  color: var(--text-primary);
+  letter-spacing: var(--tracking-heading);
+  margin-bottom: var(--space-xs);
+  line-height: var(--leading-tight);
+}
+
+.page-hero-desc {
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  max-width: 680px;
+  line-height: var(--leading-body);
+}
+
+/* Grid & Cards for Subpages */
+.cards-grid-2col {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
+}
+
+.cards-grid-3col {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+.content-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-sm);
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition-fast);
+}
+
+.content-card:hover {
+  border-color: var(--border-hover);
+}
+
+.content-card-title {
+  font-size: var(--text-xl);
+  font-weight: var(--weight-semibold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.content-card-desc {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: var(--leading-body);
+  margin-bottom: var(--space-md);
+  flex-grow: 1;
+}
+
+/* Contact Details Box */
+.contact-info-panel {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-sm);
+  padding: var(--space-xl);
+}
+
+.contact-row {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+  padding: var(--space-md) 0;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.contact-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.contact-row-label {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-badge);
+  text-transform: uppercase;
+  color: var(--accent-gold);
+  min-width: 110px;
+}
+
+.contact-row-val {
+  font-size: var(--text-sm);
+  color: var(--text-primary);
+}
+
+.contact-row-val a {
+  color: var(--text-primary);
+}
+
+.contact-row-val a:hover {
+  color: var(--accent-gold);
+  text-decoration: underline;
+}
+
+/* Subpage Responsiveness */
+@media (max-width: 900px) {
+  .cards-grid-3col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .page-hero {
+    padding: 40px 0 32px;
+    margin-bottom: var(--space-lg);
+  }
+
+  .page-hero-title {
+    font-size: 28px;
+  }
+
+  .page-hero-desc {
+    font-size: var(--text-sm);
+  }
+
+  .cards-grid-2col,
+  .cards-grid-3col {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  .contact-info-panel {
+    padding: var(--space-md);
+  }
+
+  .contact-row {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .contact-row-label {
+    min-width: unset;
+  }
+}

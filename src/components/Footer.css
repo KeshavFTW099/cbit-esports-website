@@ -1,0 +1,140 @@
+/* ==========================================================================
+   CBIT ESPORTS - FOOTER STYLES
+   ========================================================================== */
+
+.site-footer {
+  background-color: var(--bg-secondary);
+  border-top: 1px solid var(--border-subtle);
+  padding: var(--space-2xl) 0 var(--space-lg);
+  margin-top: auto;
+  width: 100%;
+}
+
+.footer-main-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: var(--space-xl);
+  margin-bottom: var(--space-xl);
+}
+
+.footer-col-brand {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  max-width: 360px;
+}
+
+.footer-brand-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.footer-logo-img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
+.footer-brand-name {
+  font-size: var(--text-base);
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.04em;
+  color: var(--text-primary);
+  text-transform: uppercase;
+}
+
+.footer-brand-name .brand-accent {
+  color: var(--accent-gold);
+}
+
+.footer-description {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: var(--leading-body);
+}
+
+.footer-meta-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+}
+
+.footer-dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--accent-gold);
+  border-radius: 50%;
+}
+
+/* Footer Navigation Columns */
+.footer-col-title {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-badge);
+  text-transform: uppercase;
+  color: var(--text-primary);
+  margin-bottom: var(--space-md);
+}
+
+.footer-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-link {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  transition: var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+}
+
+.footer-link:hover {
+  color: var(--accent-gold);
+  transform: translateX(2px);
+}
+
+/* Footer Bottom Bar */
+.footer-bottom {
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.footer-copy,
+.footer-attribution {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+  .site-footer {
+    padding: var(--space-xl) 0 var(--space-md);
+  }
+
+  .footer-main-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    margin-bottom: var(--space-lg);
+  }
+
+  .footer-col-brand {
+    max-width: 100%;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}

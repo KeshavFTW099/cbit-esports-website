@@ -1,0 +1,91 @@
+/* ==========================================================================
+   CBIT ESPORTS DESIGN SYSTEM TOKENS
+   Inspired by Skylife Sciences typography & layout discipline
+   Tailored to CBIT Esports authentic dark matte & warm gold identity
+   ========================================================================== */
+
+:root {
+  /* Surface & Background Colors */
+  --bg-primary: #111110;        /* Soft matte black / very dark charcoal */
+  --bg-secondary: #171716;      /* Secondary dark surface */
+  --bg-card: #1B1B19;           /* Clean card & container surface */
+  --bg-card-hover: #222220;     /* Controlled hover surface */
+  --bg-elevated: #282825;       /* Elevated dialogs, drawers, badges */
+
+  /* Brand Accent (Sampled directly from the official CBIT Esports crest) */
+  --accent-gold: #F2B544;       /* Primary warm yellow/orange */
+  --accent-gold-hover: #E5A52F; /* Rich amber hover */
+  --accent-gold-dark: #C98B1C;  /* Deeper amber */
+  --accent-gold-subtle: rgba(242, 181, 68, 0.08); /* Transparent highlight */
+  --accent-gold-border: rgba(242, 181, 68, 0.22); /* Subtle gold border */
+
+  /* Text & Contrast */
+  --text-primary: #F5F5F3;      /* Warm off-white - non-jarring contrast */
+  --text-secondary: #9B9B95;    /* Muted neutral gray for body & meta */
+  --text-muted: #646460;        /* Tertiary caption & subtle metadata */
+  --text-on-accent: #111110;    /* Dark text over solid gold buttons */
+
+  /* Borders & Dividers */
+  --border-subtle: #242422;     /* Very subtle dark border */
+  --border-card: #2B2B28;       /* Card borders */
+  --border-hover: #40403C;      /* Card hover border */
+
+  /* Typography */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  
+  --text-xs: 0.75rem;    /* 12px */
+  --text-sm: 0.875rem;   /* 14px */
+  --text-base: 1rem;     /* 16px */
+  --text-lg: 1.125rem;   /* 18px */
+  --text-xl: 1.25rem;    /* 20px */
+  --text-2xl: 1.5rem;    /* 24px */
+  --text-3xl: 1.875rem;  /* 30px */
+  --text-4xl: 2.25rem;   /* 36px */
+  --text-5xl: 2.75rem;   /* 44px */
+
+  --weight-light: 300;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --weight-extrabold: 800;
+
+  --tracking-tight: -0.025em;
+  --tracking-heading: -0.02em;
+  --tracking-normal: 0;
+  --tracking-badge: 0.15em;
+
+  --leading-tight: 1.15;
+  --leading-heading: 1.25;
+  --leading-body: 1.65;
+
+  /* Spacing Scale */
+  --space-2xs: 4px;
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 40px;
+  --space-xl: 64px;
+  --space-2xl: 96px;
+  --space-section: 128px;
+
+  /* Layout */
+  --container-max-width: 1200px;
+  --container-padding: 24px;
+  --header-height: 76px;
+  --header-height-mobile: 68px;
+
+  /* Radii & Sharpness */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+
+  /* Restrained Shadows & Elevation */
+  --shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.4);
+  --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.45);
+  
+  /* Natural Smooth Transitions */
+  --transition-fast: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --transition-smooth: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}

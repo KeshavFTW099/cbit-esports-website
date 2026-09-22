@@ -1,0 +1,283 @@
+/* ==========================================================================
+   CBIT ESPORTS - HEADER STYLES
+   Refined Navbar Architecture:
+   - Solid #0B0B0A background (darker than #111110 page body)
+   - Left-aligned brand positioning with comfortable viewport breathing room
+   - Subtle 1.04x smooth hover interaction on navigation items
+   - Subtle solid 1px border separation (no blur, no glow, no glassmorphism)
+   ========================================================================== */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  width: 100%;
+  background-color: #080807;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), 0 1px 3px rgba(0, 0, 0, 0.35);
+  transition: var(--transition-fast);
+}
+
+.header-container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0 28px;
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+}
+
+/* Brand styling: moved comfortably toward left edge */
+.header-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.header-logo-img {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+  border-radius: var(--radius-xs);
+  transition: transform 200ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.header-brand:hover .header-logo-img {
+  transform: scale(1.04);
+}
+
+.header-brand-text {
+  font-size: var(--text-base);
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.04em;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.header-brand-text .brand-accent {
+  color: var(--accent-gold);
+}
+
+/* Desktop Navigation */
+.desktop-nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.nav-item {
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav-link {
+  display: inline-block;
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--text-secondary);
+  padding: 8px 14px;
+  border-radius: var(--radius-xs);
+  position: relative;
+  letter-spacing: 0.01em;
+  transform-origin: center center;
+  transition: color 200ms cubic-bezier(0.16, 1, 0.3, 1), transform 200ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+  white-space: nowrap;
+}
+
+/* Subtle desktop hover interaction: 1.04x smooth scale, no bounce, no glow */
+@media (hover: hover) and (pointer: fine) {
+  .nav-link:hover {
+    color: var(--text-primary);
+    transform: scale(1.04);
+  }
+}
+
+.nav-link.active {
+  color: var(--accent-gold);
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0px;
+  left: 14px;
+  right: 14px;
+  height: 2px;
+  background-color: var(--accent-gold);
+  border-radius: 1px;
+}
+
+/* Mobile Menu Toggle Button */
+.mobile-menu-btn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  color: var(--text-primary);
+  background: transparent;
+  border: 1px solid #282824;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.mobile-menu-btn:hover {
+  border-color: var(--border-hover);
+  color: var(--accent-gold);
+}
+
+/* Mobile Drawer */
+.mobile-drawer {
+  display: none;
+  position: fixed;
+  top: var(--header-height-mobile);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: calc(100dvh - var(--header-height-mobile));
+  background-color: #080807;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+  overflow-y: auto;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s ease;
+}
+
+.mobile-drawer.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.mobile-drawer-content {
+  padding: var(--space-lg) var(--container-padding);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100%;
+}
+
+.mobile-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mobile-nav-item {
+  width: 100%;
+}
+
+.mobile-nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 14px;
+  font-size: var(--text-lg);
+  font-weight: var(--weight-medium);
+  color: var(--text-primary);
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  transition: var(--transition-fast);
+  min-height: 52px;
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link.active {
+  background-color: var(--bg-card);
+  border-color: var(--border-subtle);
+  color: var(--accent-gold);
+  padding-left: 18px;
+}
+
+.mobile-drawer-footer {
+  margin-top: var(--space-xl);
+  padding-top: var(--space-md);
+  border-top: 1px solid #1F1F1D;
+}
+
+.mobile-institution-tag {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+@media (min-width: 1440px) {
+  .header-container {
+    padding: 0 36px;
+  }
+}
+
+@media (max-width: 960px) {
+  .header-container {
+    height: var(--header-height-mobile);
+    padding: 0 20px;
+  }
+
+  .desktop-nav {
+    display: none;
+  }
+
+  .mobile-menu-btn {
+    display: flex;
+  }
+
+  .mobile-drawer {
+    display: block;
+  }
+
+  .header-brand-text {
+    font-size: var(--text-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .header-container {
+    padding: 0 16px;
+  }
+
+  .header-brand {
+    gap: 8px;
+  }
+
+  .header-logo-img {
+    width: 34px;
+    height: 34px;
+  }
+
+  .header-brand-text {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 360px) {
+  .header-container {
+    padding: 0 12px;
+  }
+
+  .header-brand-text {
+    font-size: 12px;
+    letter-spacing: 0.02em;
+  }
+}
