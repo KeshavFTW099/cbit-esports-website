@@ -1,6 +1,5 @@
 import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { ALL_PARTNERS } from '../data/events';
 import { CLUB_DETAILS, WHAT_WE_DO } from '../data/clubInfo';
 import CurrentSpotlight from '../components/CurrentSpotlight';
 import './Home.css';
