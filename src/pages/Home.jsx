@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { CLUB_DETAILS, WHAT_WE_DO } from '../data/clubInfo';
 import CurrentSpotlight from '../components/CurrentSpotlight';
+import PastEventsCarousel from '../components/PastEventsCarousel';
 import './Home.css';
 
 export default function Home() {
@@ -252,94 +253,10 @@ export default function Home() {
       </section>
 
       {/* ====================================================================
-          5. PAST EVENTS (EDITORIAL ARCHIVE PREVIEW)
-          Condensed spotlight linking directly to /past-events
+          5. PAST EVENTS (EDITORIAL CAROUSEL SHOWCASE)
+          Multi-event horizontal carousel showcasing authentic CBIT Esports events
           ==================================================================== */}
-      <section id="past-events-section" className="section" aria-labelledby="past-events-heading">
-        <div className="container">
-          <div className="section-header-row">
-            <div>
-              <span className="section-badge">Historic Archive</span>
-              <h2 id="past-events-heading" className="section-heading">Past Events</h2>
-              <p className="section-subheading">
-                A track record of official collegiate tournaments, campus gaming activations, and publisher partnerships.
-              </p>
-            </div>
-            <Link to="/past-events" className="btn btn-secondary view-all-btn">
-              View Full Archive
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <line x1="5" y1="12" x2="19" y2="12" />
-                <polyline points="12 5 19 12 12 19" />
-              </svg>
-            </Link>
-          </div>
-
-          {/* Editorial Archive Spotlight */}
-          <div className="archive-spotlight-card">
-            <div className="archive-spotlight-header">
-              <span className="archive-spotlight-year">2026 Archive Highlight</span>
-              <span className="archive-spotlight-status">Verified Event Record</span>
-            </div>
-
-            <div className="archive-spotlight-grid">
-              <div className="archive-spotlight-media">
-                <img
-                  src="/events/monster-bgmi-2026.jpg"
-                  alt="Monster × BGMI Campus Gaming Activation at CBIT"
-                  className="archive-spotlight-img"
-                  loading="lazy"
-                />
-                <span className="archive-spotlight-chip">08–10 APR 2026</span>
-              </div>
-
-              <div className="archive-spotlight-content">
-                <div className="archive-spotlight-meta">
-                  <span className="spotlight-date">08–10 APR 2026</span>
-                  <span className="spotlight-sep">•</span>
-                  <span className="spotlight-cat">Campus Gaming Activation</span>
-                </div>
-
-                <h3 className="archive-spotlight-title">Monster × BGMI</h3>
-
-                <p className="archive-spotlight-desc">
-                  A 3-day esports activation conducted at CBIT in collaboration with Monster Energy and BGMI. The first two days focused on student engagement and Monster Energy product distribution, while the third day featured a competitive BGMI tournament with live match screening for the campus audience.
-                </p>
-
-                <div className="archive-spotlight-metrics">
-                  <div className="spotlight-metric-item">
-                    <span className="spotlight-metric-val">128</span>
-                    <span className="spotlight-metric-lbl">Participants</span>
-                  </div>
-                  <div className="spotlight-metric-item">
-                    <span className="spotlight-metric-val">3 Days</span>
-                    <span className="spotlight-metric-lbl">Campus Activation</span>
-                  </div>
-                  <div className="spotlight-metric-item">
-                    <span className="spotlight-metric-val">Collab</span>
-                    <span className="spotlight-metric-lbl">Monster × BGMI</span>
-                  </div>
-                </div>
-
-                <div className="archive-spotlight-actions">
-                  <Link to="/past-events" className="btn btn-primary">
-                    Explore Timeline & All Events
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                      <line x1="5" y1="12" x2="19" y2="12" />
-                      <polyline points="12 5 19 12 12 19" />
-                    </svg>
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="mobile-view-all-wrapper">
-            <Link to="/past-events" className="btn btn-secondary mobile-view-all-btn">
-              Explore Full Archive (2025–2026)
-            </Link>
-          </div>
-        </div>
-      </section>
+      <PastEventsCarousel />
 
       {/* ====================================================================
           6. PARTNERS / COLLABORATIONS

@@ -22,11 +22,10 @@ export default function CurrentSpotlight({ active = false, event = null }) {
         {/* Editorial Section Header with Thin Divider Treatment */}
         <div className="spotlight-editorial-header">
           <div className="spotlight-title-group">
-            <span className="spotlight-index-label" aria-hidden="true">01</span>
-            <span className="spotlight-divider-line" aria-hidden="true"></span>
             <h2 id="spotlight-heading" className="spotlight-heading-text">
               CURRENT SPOTLIGHT
             </h2>
+            <span className="spotlight-divider-line" aria-hidden="true"></span>
           </div>
         </div>
 
