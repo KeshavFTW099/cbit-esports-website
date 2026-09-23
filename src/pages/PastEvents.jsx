@@ -429,14 +429,6 @@ export default function PastEvents() {
                     <p className="showcase-description-text">{activeEvent.description}</p>
                   </div>
 
-                  {/* Participation Metric if Verified */}
-                  {activeEvent.participantCount && (
-                    <div className="showcase-metric-block">
-                      <span className="metric-eyebrow">PARTICIPATION</span>
-                      <span className="metric-value">{activeEvent.participantCount} PARTICIPANTS</span>
-                    </div>
-                  )}
-
                   {/* Partners / Collaborators */}
                   {activeEvent.partners && activeEvent.partners.length > 0 && (
                     <div className="showcase-partners-block">
@@ -522,13 +514,6 @@ export default function PastEvents() {
                         )}
 
                         <p className="mobile-entry-description">{evt.description}</p>
-
-                        {/* Verified Participants */}
-                        {evt.participantCount && (
-                          <div className="mobile-entry-metric">
-                            <strong>{evt.participantCount}</strong> Participants Verified
-                          </div>
-                        )}
 
                         {/* Partners */}
                         {evt.partners && evt.partners.length > 0 && (

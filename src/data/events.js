@@ -72,8 +72,7 @@ export const PAST_EVENTS_BY_YEAR = {
       partners: [
         { name: 'Free Fire', logo: '/partners/free-fire-transparent.png' },
         { name: 'Jujutsu Kaisen' }
-      ],
-      participantCount: null
+      ]
     },
     {
       id: 'krafton-cct-real-cricket-2026',
@@ -94,15 +93,14 @@ export const PAST_EVENTS_BY_YEAR = {
         '/images/events/2026/krafton-cct-real-cricket/04.webp',
         '/images/events/2026/krafton-cct-real-cricket/05.webp'
       ],
-      galleryUrl: 'https://drive.google.com/drive/folders/1cwcz08_RKho0WuKTzRoSv6V56q0x4lIO',
+      galleryUrl: 'https://drive.google.com/drive/folders/1SbycBrMqzHmS9UhHQhW0BCHY2f2BytHO',
       actionType: 'drive',
-      actionUrl: 'https://drive.google.com/drive/folders/1cwcz08_RKho0WuKTzRoSv6V56q0x4lIO',
+      actionUrl: 'https://drive.google.com/drive/folders/1SbycBrMqzHmS9UhHQhW0BCHY2f2BytHO',
       actionLabel: 'VIEW PHOTO GALLERY →',
       partners: [
         { name: 'KRAFTON', logo: '/partners/krafton-transparent.png' },
         { name: 'Real Cricket' }
-      ],
-      participantCount: null
+      ]
     },
     {
       id: 'krafton-cct-bgmi-2026',
@@ -130,37 +128,7 @@ export const PAST_EVENTS_BY_YEAR = {
       partners: [
         { name: 'KRAFTON', logo: '/partners/krafton-transparent.png' },
         { name: 'BGMI' }
-      ],
-      participantCount: null
-    },
-    {
-      id: 'infinix-codm-2026',
-      year: 2026,
-      shortDate: '02 APR',
-      date: '2 April 2026',
-      fullDate: '2 April 2026',
-      title: 'Infinix × Call of Duty Mobile',
-      shortTitle: 'Infinix × CODM',
-      category: 'Gaming Brand Activation',
-      description: 'A smartphone-powered gaming activation combining high-refresh mobile performance with competitive Call of Duty Mobile matches, providing students with hands-on device testing, tournament brackets, and showcase play.',
-      thumbnail: '/images/events/2026/infinix-codm/01.webp',
-      image: '/images/events/2026/infinix-codm/01.webp',
-      images: [
-        '/images/events/2026/infinix-codm/01.webp',
-        '/images/events/2026/infinix-codm/02.webp',
-        '/images/events/2026/infinix-codm/03.webp',
-        '/images/events/2026/infinix-codm/04.webp',
-        '/images/events/2026/infinix-codm/05.webp'
-      ],
-      galleryUrl: 'https://drive.google.com/drive/folders/13Fe1q8o9Z_z5rqOK3arOXasKthx7EB6W',
-      actionType: 'drive',
-      actionUrl: 'https://drive.google.com/drive/folders/13Fe1q8o9Z_z5rqOK3arOXasKthx7EB6W',
-      actionLabel: 'VIEW PHOTO GALLERY →',
-      partners: [
-        { name: 'INFINIX', logo: '/partners/infinix-transparent.png' },
-        { name: 'Call of Duty Mobile' }
-      ],
-      participantCount: null
+      ]
     },
     {
       id: 'monster-bgmi-2026',
@@ -181,15 +149,14 @@ export const PAST_EVENTS_BY_YEAR = {
         '/images/events/2026/monster-bgmi/04.webp',
         '/images/events/2026/monster-bgmi/05.webp'
       ],
-      galleryUrl: 'https://drive.google.com/drive/folders/1V61lsTcKEvg4kfXhtF-TclcKArp4muru',
+      galleryUrl: 'https://drive.google.com/drive/folders/1GEauKGT5N79jyQ6SNPl6b5zJ006OcK7-',
       actionType: 'drive',
-      actionUrl: 'https://drive.google.com/drive/folders/1V61lsTcKEvg4kfXhtF-TclcKArp4muru',
+      actionUrl: 'https://drive.google.com/drive/folders/1GEauKGT5N79jyQ6SNPl6b5zJ006OcK7-',
       actionLabel: 'VIEW PHOTO GALLERY →',
       partners: [
         { name: 'Monster Energy', logo: '/partners/monster-energy-transparent.png' },
         { name: 'BGMI' }
-      ],
-      participantCount: 128
+      ]
     },
     {
       id: 'free-fire-campus-league-2026',
@@ -210,14 +177,13 @@ export const PAST_EVENTS_BY_YEAR = {
         '/images/events/2026/free-fire-campus-league/04.webp',
         '/images/events/2026/free-fire-campus-league/05.webp'
       ],
-      galleryUrl: 'https://drive.google.com/drive/folders/1X1RPKwqfmhaZDEpXll8VgjD_kzTvcXzO',
+      galleryUrl: 'https://drive.google.com/drive/folders/1cwcz08_RKho0WuKTzRoSv6V56q0x4lIO',
       actionType: 'drive',
-      actionUrl: 'https://drive.google.com/drive/folders/1X1RPKwqfmhaZDEpXll8VgjD_kzTvcXzO',
+      actionUrl: 'https://drive.google.com/drive/folders/1cwcz08_RKho0WuKTzRoSv6V56q0x4lIO',
       actionLabel: 'VIEW PHOTO GALLERY →',
       partners: [
         { name: 'Free Fire', logo: '/partners/free-fire-transparent.png' }
-      ],
-      participantCount: null
+      ]
     },
     {
       id: 'nrx-trinity-2026',
@@ -234,7 +200,6 @@ export const PAST_EVENTS_BY_YEAR = {
       images: [],
       galleryUrl: null,
       partners: [],
-      participantCount: null,
       actionType: 'instagram',
       actionUrl: 'https://www.instagram.com/stories/highlights/18067450556523828/',
       actionLabel: 'VIEW EVENT HIGHLIGHTS →'
@@ -260,7 +225,6 @@ export const PAST_EVENTS_BY_YEAR = {
       partners: [
         { name: 'HP OMEN', logo: '/partners/hp-omen-transparent.png' }
       ],
-      participantCount: null,
       actionType: 'highlights',
       actionUrl: '/collaborate',
       actionLabel: 'VIEW EVENT HIGHLIGHTS →'
@@ -283,10 +247,37 @@ export const PAST_EVENTS_BY_YEAR = {
         { name: 'ACT Fibernet' },
         { name: 'BGMI' }
       ],
-      participantCount: null,
       actionType: 'instagram',
       actionUrl: 'https://www.instagram.com/stories/highlights/18044780885404478/',
       actionLabel: 'VIEW EVENT HIGHLIGHTS →'
+    },
+    {
+      id: 'infinix-codm-2026',
+      year: 2025,
+      shortDate: '02 APR',
+      date: '2 April 2026',
+      fullDate: '2 April 2026',
+      title: 'Infinix × Call of Duty Mobile',
+      shortTitle: 'Infinix × CODM',
+      category: 'Gaming Brand Activation',
+      description: 'A smartphone-powered gaming activation combining high-refresh mobile performance with competitive Call of Duty Mobile matches, providing students with hands-on device testing, tournament brackets, and showcase play.',
+      thumbnail: '/images/events/2026/infinix-codm/01.webp',
+      image: '/images/events/2026/infinix-codm/01.webp',
+      images: [
+        '/images/events/2026/infinix-codm/01.webp',
+        '/images/events/2026/infinix-codm/02.webp',
+        '/images/events/2026/infinix-codm/03.webp',
+        '/images/events/2026/infinix-codm/04.webp',
+        '/images/events/2026/infinix-codm/05.webp'
+      ],
+      galleryUrl: 'https://drive.google.com/drive/folders/13Fe1q8o9Z_z5rqOK3arOXasKthx7EB6W',
+      actionType: 'drive',
+      actionUrl: 'https://drive.google.com/drive/folders/13Fe1q8o9Z_z5rqOK3arOXasKthx7EB6W',
+      actionLabel: 'VIEW PHOTO GALLERY →',
+      partners: [
+        { name: 'INFINIX', logo: '/partners/infinix-transparent.png' },
+        { name: 'Call of Duty Mobile' }
+      ]
     }
   ],
   '2024': [],
