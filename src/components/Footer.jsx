@@ -45,49 +45,45 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Connect & Institutional Info */}
+          {/* Connect & Social Links */}
           <div className="footer-col">
             <h4 className="footer-col-title">Connect</h4>
-            <ul className="footer-nav-list">
-              <li>
-                <a
-                  href={CLUB_DETAILS.instagram}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="footer-link"
-                >
-                  Instagram ↗
-                </a>
-              </li>
-              <li>
-                <a
-                  href={CLUB_DETAILS.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="footer-link"
-                >
-                  LinkedIn ↗
-                </a>
-              </li>
-              <li>
-                <a
-                  href={CLUB_DETAILS.discord}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="footer-link"
-                >
-                  Discord Server ↗
-                </a>
-              </li>
-              <li>
-                <a
-                  href={`mailto:${CLUB_DETAILS.email}`}
-                  className="footer-link"
-                >
-                  {CLUB_DETAILS.email}
-                </a>
-              </li>
-            </ul>
+            <div className="footer-social-row" aria-label="Official Social Profiles">
+              <a
+                href={CLUB_DETAILS.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer-social-link"
+              >
+                Instagram
+              </a>
+              <span className="footer-social-dot" aria-hidden="true">•</span>
+              <a
+                href={CLUB_DETAILS.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer-social-link"
+              >
+                LinkedIn
+              </a>
+              <span className="footer-social-dot" aria-hidden="true">•</span>
+              <a
+                href={CLUB_DETAILS.discord}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer-social-link"
+              >
+                Discord
+              </a>
+            </div>
+            <div className="footer-email-block">
+              <a
+                href={`mailto:${CLUB_DETAILS.email}`}
+                className="footer-email-link"
+              >
+                {CLUB_DETAILS.email}
+              </a>
+            </div>
           </div>
         </div>
 
@@ -95,6 +91,9 @@ export default function Footer() {
         <div className="footer-bottom">
           <p className="footer-copy">
             © {currentYear} {CLUB_DETAILS.name}. All rights reserved.
+          </p>
+          <p className="footer-copy">
+            Made by Keshav & Hannish
           </p>
           <p className="footer-attribution">
             Chaitanya Bharathi Institute of Technology (Autonomous), Hyderabad - 500075

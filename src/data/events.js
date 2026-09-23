@@ -131,6 +131,31 @@ export const PAST_EVENTS_BY_YEAR = {
       ]
     },
     {
+      id: 'infinix-codm-2026',
+      year: 2026,
+      shortDate: '02 APR',
+      date: '2 April 2026',
+      fullDate: '02 APR 2026',
+      title: 'INFINIX × CALL OF DUTY MOBILE',
+      shortTitle: 'INFINIX × CODM',
+      category: 'Gaming Brand Activation',
+      description: 'A smartphone-powered gaming activation combining high-refresh mobile performance with competitive Call of Duty Mobile matches, providing students with hands-on device testing, tournament brackets, and showcase play.',
+      mediaType: 'video',
+      youtubeId: 'oWrGU4jfcTE',
+      youtubeUrl: 'https://youtu.be/oWrGU4jfcTE?si=N42VFu9QdZXaI0pd',
+      thumbnail: null,
+      image: null,
+      images: [],
+      galleryUrl: null,
+      actionType: 'youtube',
+      actionUrl: 'https://youtu.be/oWrGU4jfcTE?si=N42VFu9QdZXaI0pd',
+      actionLabel: 'VIEW VIDEO / WATCH ON YOUTUBE →',
+      partners: [
+        { name: 'INFINIX', logo: '/partners/infinix-transparent.png' },
+        { name: 'CALL OF DUTY MOBILE' }
+      ]
+    },
+    {
       id: 'monster-bgmi-2026',
       year: 2026,
       shortDate: '08–10 APR',
@@ -195,14 +220,17 @@ export const PAST_EVENTS_BY_YEAR = {
       shortTitle: 'NRX Trinity',
       category: 'Collegiate Championship Finale',
       description: 'The crowning climax of the NRX Trinity competitive series, bringing together top collegiate rosters for a high-intensity grand final showdown on campus.',
-      thumbnail: null,
-      image: null,
-      images: [],
+      thumbnail: '/images/events/2026/nrx-trinity/01.webp',
+      image: '/images/events/2026/nrx-trinity/01.webp',
+      images: [
+        '/images/events/2026/nrx-trinity/01.webp'
+      ],
       galleryUrl: null,
       partners: [],
-      actionType: 'instagram',
-      actionUrl: 'https://www.instagram.com/stories/highlights/18067450556523828/',
-      actionLabel: 'VIEW EVENT HIGHLIGHTS →'
+      actionType: null,
+      actionUrl: null,
+      actionLabel: null,
+      instagramUrl: 'https://www.instagram.com/stories/highlights/18067450556523828/'
     }
   ],
   '2025': [
@@ -219,15 +247,19 @@ export const PAST_EVENTS_BY_YEAR = {
       thumbnail: '/images/events/2025/hp-omen/01.webp',
       image: '/images/events/2025/hp-omen/01.webp',
       images: [
-        '/images/events/2025/hp-omen/01.webp'
+        '/images/events/2025/hp-omen/01.webp',
+        '/images/events/2025/hp-omen/02.webp',
+        '/images/events/2025/hp-omen/03.webp',
+        '/images/events/2025/hp-omen/04.webp',
+        '/images/events/2025/hp-omen/05.webp'
       ],
-      galleryUrl: null,
+      galleryUrl: 'https://drive.google.com/drive/folders/13Fe1q8o9Z_z5rqOK3arOXasKthx7EB6W',
       partners: [
         { name: 'HP OMEN', logo: '/partners/hp-omen-transparent.png' }
       ],
-      actionType: 'highlights',
-      actionUrl: '/collaborate',
-      actionLabel: 'VIEW EVENT HIGHLIGHTS →'
+      actionType: 'drive',
+      actionUrl: 'https://drive.google.com/drive/folders/13Fe1q8o9Z_z5rqOK3arOXasKthx7EB6W',
+      actionLabel: 'VIEW PHOTO GALLERY →'
     },
     {
       id: 'act-fibernet-bgmi-2025',
@@ -239,45 +271,20 @@ export const PAST_EVENTS_BY_YEAR = {
       shortTitle: 'ACT × BGMI',
       category: 'Campus Battle Royale Invitational',
       description: 'A high-intensity campus esports tournament powered by ACT Fibernet, delivering low-latency competitive gaming and tournament bracket play for collegiate rosters.',
-      thumbnail: null,
-      image: null,
-      images: [],
+      thumbnail: '/images/events/2025/act-fibernet-bgmi/01.webp',
+      image: '/images/events/2025/act-fibernet-bgmi/01.webp',
+      images: [
+        '/images/events/2025/act-fibernet-bgmi/01.webp'
+      ],
       galleryUrl: null,
       partners: [
         { name: 'ACT Fibernet' },
         { name: 'BGMI' }
       ],
-      actionType: 'instagram',
-      actionUrl: 'https://www.instagram.com/stories/highlights/18044780885404478/',
-      actionLabel: 'VIEW EVENT HIGHLIGHTS →'
-    },
-    {
-      id: 'infinix-codm-2026',
-      year: 2025,
-      shortDate: '02 APR',
-      date: '2 April 2026',
-      fullDate: '2 April 2026',
-      title: 'Infinix × Call of Duty Mobile',
-      shortTitle: 'Infinix × CODM',
-      category: 'Gaming Brand Activation',
-      description: 'A smartphone-powered gaming activation combining high-refresh mobile performance with competitive Call of Duty Mobile matches, providing students with hands-on device testing, tournament brackets, and showcase play.',
-      thumbnail: '/images/events/2026/infinix-codm/01.webp',
-      image: '/images/events/2026/infinix-codm/01.webp',
-      images: [
-        '/images/events/2026/infinix-codm/01.webp',
-        '/images/events/2026/infinix-codm/02.webp',
-        '/images/events/2026/infinix-codm/03.webp',
-        '/images/events/2026/infinix-codm/04.webp',
-        '/images/events/2026/infinix-codm/05.webp'
-      ],
-      galleryUrl: 'https://drive.google.com/drive/folders/13Fe1q8o9Z_z5rqOK3arOXasKthx7EB6W',
-      actionType: 'drive',
-      actionUrl: 'https://drive.google.com/drive/folders/13Fe1q8o9Z_z5rqOK3arOXasKthx7EB6W',
-      actionLabel: 'VIEW PHOTO GALLERY →',
-      partners: [
-        { name: 'INFINIX', logo: '/partners/infinix-transparent.png' },
-        { name: 'Call of Duty Mobile' }
-      ]
+      actionType: null,
+      actionUrl: null,
+      actionLabel: null,
+      instagramUrl: 'https://www.instagram.com/stories/highlights/18044780885404478/'
     }
   ],
   '2024': [],

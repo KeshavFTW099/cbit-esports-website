@@ -9,8 +9,8 @@ export const CLUB_DETAILS = {
   foundedYear: '2023',
   email: 'cbitesports@cbit.ac.in',
   instagram: 'https://instagram.com/cbitesports',
-  linkedin: 'https://linkedin.com/company/cbit-esports',
-  discord: 'https://discord.gg/cbitesports',
+  linkedin: 'https://in.linkedin.com/company/cbitesports',
+  discord: 'https://discord.gg/2qXTBZTht4',
   shortBio: 'The official collegiate gaming and esports organization of Chaitanya Bharathi Institute of Technology, Hyderabad. Fostering competitive excellence, event management, and gaming culture.',
   longBio: 'CBIT Esports is an officially recognized student club dedicated to elevating collegiate competitive gaming. Through organized campus tournaments, regional inter-college invitationals, brand partnerships, and regular community scrimmages, we provide CBIT students with a professional platform to compete, cast, create content, and manage large-scale esports events.'
 };

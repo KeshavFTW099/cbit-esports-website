@@ -156,3 +156,133 @@
     min-width: unset;
   }
 }
+
+/* ==========================================================================
+   JOIN US - NO OPENINGS EDITORIAL STATE
+   ========================================================================== */
+
+.no-openings-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 0 64px;
+}
+
+.no-openings-panel {
+  width: 100%;
+  max-width: 680px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-sm);
+  padding: 64px 48px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.45);
+}
+
+.no-openings-kicker {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+  margin-bottom: 16px;
+}
+
+.no-openings-title {
+  font-size: clamp(24px, 3.2vw, 32px);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: var(--text-primary);
+  line-height: 1.2;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.no-openings-divider {
+  width: 48px;
+  height: 2px;
+  background-color: var(--accent-gold);
+  margin: 0 auto 28px;
+  opacity: 0.85;
+}
+
+.no-openings-lead {
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.no-openings-body {
+  font-size: 14.5px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-width: 520px;
+  margin: 0 auto 36px;
+}
+
+.no-openings-action {
+  display: flex;
+  justify-content: center;
+}
+
+.no-openings-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 9px 18px;
+  background-color: transparent;
+  border: 1px solid var(--accent-gold-border);
+  border-radius: var(--radius-xs);
+  color: var(--accent-gold);
+  font-size: 11.5px;
+  font-weight: var(--weight-semibold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 180ms ease;
+}
+
+.no-openings-btn:hover {
+  background-color: rgba(242, 181, 68, 0.08);
+  border-color: var(--accent-gold);
+  color: #FFFFFF;
+  transform: translateX(2px);
+}
+
+.no-openings-btn .instagram-icon {
+  width: 13px;
+  height: 13px;
+  stroke: currentColor;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .no-openings-section {
+    padding: 12px 0 40px;
+  }
+
+  .no-openings-panel {
+    padding: 44px 20px;
+  }
+
+  .no-openings-lead {
+    font-size: 15.5px;
+  }
+
+  .no-openings-body {
+    font-size: 13.5px;
+    margin-bottom: 28px;
+  }
+
+  .no-openings-btn {
+    width: auto;
+    max-width: 100%;
+    padding: 9px 16px;
+  }
+}
+

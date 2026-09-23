@@ -6,7 +6,7 @@ import './Header.css';
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [isMobilePastEventsOpen, setIsMobilePastEventsOpen] = useState(true);
+  const [isMobilePastEventsOpen, setIsMobilePastEventsOpen] = useState(false);
   const location = useLocation();
   const dropdownRef = useRef(null);
 
@@ -99,15 +99,12 @@ export default function Header() {
                         </Link>
                       </div>
 
-                      {/* Editorial Year Dropdown Menu */}
+                      {/* Clean Minimal Year Dropdown Menu */}
                       <div
                         className={`nav-dropdown-menu ${isDropdownOpen ? 'open' : ''}`}
                         role="menu"
                         aria-label="Past Events Archive Years"
                       >
-                        <div className="dropdown-menu-header">
-                          <span className="dropdown-menu-title">EVENT ARCHIVE</span>
-                        </div>
                         <ul className="dropdown-year-list">
                           {AVAILABLE_YEARS.map((yr) => {
                             const isYearActive = location.pathname === `/past-events/${yr}`;
@@ -120,24 +117,11 @@ export default function Header() {
                                   onClick={() => setIsDropdownOpen(false)}
                                 >
                                   <span className="dropdown-year-num">{yr}</span>
-                                  <span className="dropdown-year-label">
-                                    {yr === '2026' || yr === '2025' ? 'Verified Archive' : 'Archive'}
-                                  </span>
                                 </Link>
                               </li>
                             );
                           })}
                         </ul>
-                        <div className="dropdown-menu-footer">
-                          <Link
-                            to="/past-events"
-                            className="dropdown-all-link"
-                            onClick={() => setIsDropdownOpen(false)}
-                          >
-                            <span>View Full Timeline</span>
-                            <span aria-hidden="true">→</span>
-                          </Link>
-                        </div>
                       </div>
                     </li>
                   );
@@ -212,47 +196,35 @@ export default function Header() {
               if (link.isDropdown) {
                 return (
                   <li key={link.to} className="mobile-nav-item mobile-nav-dropdown-item">
-                    <div className="mobile-dropdown-header">
-                      <Link
-                        to={link.to}
-                        className={`mobile-nav-link ${isPastEventsActive ? 'active' : ''}`}
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        <span>{link.label}</span>
-                      </Link>
-                      <button
-                        type="button"
-                        className="mobile-subnav-toggle"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          setIsMobilePastEventsOpen(!isMobilePastEventsOpen);
-                        }}
-                        aria-expanded={isMobilePastEventsOpen}
-                        aria-label="Toggle Past Events Years"
-                      >
-                        <span className={`mobile-caret ${isMobilePastEventsOpen ? 'open' : ''}`}>▾</span>
-                      </button>
-                    </div>
+                    <button
+                      type="button"
+                      className={`mobile-nav-link mobile-dropdown-trigger ${isPastEventsActive ? 'active' : ''}`}
+                      onClick={() => setIsMobilePastEventsOpen(!isMobilePastEventsOpen)}
+                      aria-expanded={isMobilePastEventsOpen}
+                      aria-label="Toggle Past Events Archive Years"
+                    >
+                      <span>{link.label}</span>
+                      <span className={`mobile-caret ${isMobilePastEventsOpen ? 'open' : ''}`}>▾</span>
+                    </button>
 
-                    {/* Mobile Sub-Years Grid */}
+                    {/* Mobile Sub-Years List: Strictly year numbers with indentation & vertical line */}
                     {isMobilePastEventsOpen && (
-                      <div className="mobile-sub-years-container">
-                        <div className="mobile-sub-years-grid">
-                          {AVAILABLE_YEARS.map((yr) => {
-                            const isYrActive = location.pathname === `/past-events/${yr}`;
-                            return (
+                      <ul className="mobile-sub-years-list" aria-label="Past Events Archive Years">
+                        {AVAILABLE_YEARS.map((yr) => {
+                          const isYrActive = location.pathname === `/past-events/${yr}`;
+                          return (
+                            <li key={yr} className="mobile-sub-year-item">
                               <Link
-                                key={yr}
                                 to={`/past-events/${yr}`}
-                                className={`mobile-sub-year-chip ${isYrActive ? 'active' : ''}`}
+                                className={`mobile-sub-year-link ${isYrActive ? 'active' : ''}`}
                                 onClick={() => setIsMenuOpen(false)}
                               >
                                 {yr}
                               </Link>
-                            );
-                          })}
-                        </div>
-                      </div>
+                            </li>
+                          );
+                        })}
+                      </ul>
                     )}
                   </li>
                 );

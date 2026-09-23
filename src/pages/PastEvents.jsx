@@ -148,9 +148,11 @@ function EventPhotoCarousel({
             />
           ))}
         </div>
-        <div className="mobile-photo-tag">
-          <span>{String(photoIndex + 1).padStart(2, '0')} / {String(totalPhotos).padStart(2, '0')}</span>
-        </div>
+        {totalPhotos > 1 && (
+          <div className="mobile-photo-tag">
+            <span>{String(photoIndex + 1).padStart(2, '0')} / {String(totalPhotos).padStart(2, '0')}</span>
+          </div>
+        )}
       </div>
     );
   }
@@ -175,10 +177,12 @@ function EventPhotoCarousel({
           />
         ))}
 
-        {/* Small Counter: 01 / 05 */}
-        <div className="carousel-counter-tag">
-          <span>{String(photoIndex + 1).padStart(2, '0')} / {String(totalPhotos).padStart(2, '0')}</span>
-        </div>
+        {/* Small Counter: only if multiple photos */}
+        {totalPhotos > 1 && (
+          <div className="carousel-counter-tag">
+            <span>{String(photoIndex + 1).padStart(2, '0')} / {String(totalPhotos).padStart(2, '0')}</span>
+          </div>
+        )}
 
         {/* Subtle Prev / Next Controls if multiple photos */}
         {totalPhotos > 1 && (
@@ -219,7 +223,7 @@ function EventPhotoCarousel({
       )}
 
       <div className="showcase-photo-caption-bar">
-        <span>CBIT On-Campus Documentation • Photo {photoIndex + 1} of {totalPhotos}</span>
+        <span>{totalPhotos > 1 ? `CBIT On-Campus Documentation • Photo ${photoIndex + 1} of ${totalPhotos}` : 'CBIT On-Campus Documentation • Verified Event Photograph'}</span>
         <span>{shortDate} {year}</span>
       </div>
     </div>
@@ -379,13 +383,29 @@ export default function PastEvents() {
                     <h2 className="showcase-event-title">{activeEvent.title}</h2>
                     <div className="showcase-meta-line">
                       <span className="showcase-date">{activeEvent.fullDate || activeEvent.date}</span>
-                      <span className="showcase-dot" aria-hidden="true">•</span>
-                      <span className="showcase-category">{activeEvent.category}</span>
+                      {activeEvent.category && !activeEvent.youtubeId && (
+                        <>
+                          <span className="showcase-dot" aria-hidden="true">•</span>
+                          <span className="showcase-category">{activeEvent.category}</span>
+                        </>
+                      )}
                     </div>
                   </div>
 
-                  {/* Photo Carousel or Clean No-Image State */}
-                  {hasShowcaseImages ? (
+                  {/* Video Showcase, Photo Carousel, or Clean No-Image State */}
+                  {activeEvent.youtubeId ? (
+                    <div className="showcase-video-wrapper">
+                      <div className="showcase-video-media">
+                        <iframe
+                          src={`https://www.youtube.com/embed/${activeEvent.youtubeId}?rel=0`}
+                          title={`${activeEvent.title} Video Showcase`}
+                          className="showcase-video-iframe"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          allowFullScreen
+                        />
+                      </div>
+                    </div>
+                  ) : hasShowcaseImages ? (
                     <EventPhotoCarousel
                       key={activeEvent.id}
                       images={activeEvent.images}
@@ -452,17 +472,36 @@ export default function PastEvents() {
                     </div>
                   )}
 
-                  {/* Event Action: Clear destination-specific CTA */}
-                  {activeEvent.actionUrl && (
+                  {/* Event Actions: Clear destination-specific CTA + Secondary Instagram Action */}
+                  {(activeEvent.actionUrl || activeEvent.instagramUrl) && (
                     <div className="showcase-action-block">
-                      <a
-                        href={activeEvent.actionUrl}
-                        target={activeEvent.actionUrl.startsWith('http') ? '_blank' : undefined}
-                        rel={activeEvent.actionUrl.startsWith('http') ? 'noopener noreferrer' : undefined}
-                        className="showcase-action-btn"
-                      >
-                        <span>{activeEvent.actionLabel || 'VIEW PHOTO GALLERY →'}</span>
-                      </a>
+                      {activeEvent.actionUrl && (
+                        <a
+                          href={activeEvent.actionUrl}
+                          target={activeEvent.actionUrl.startsWith('http') || activeEvent.actionUrl.startsWith('/images') ? '_blank' : undefined}
+                          rel={activeEvent.actionUrl.startsWith('http') || activeEvent.actionUrl.startsWith('/images') ? 'noopener noreferrer' : undefined}
+                          className="showcase-action-btn"
+                        >
+                          <span>{activeEvent.actionLabel || 'VIEW PHOTO GALLERY →'}</span>
+                        </a>
+                      )}
+
+                      {activeEvent.instagramUrl && (
+                        <a
+                          href={activeEvent.instagramUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="showcase-instagram-btn"
+                          aria-label={`View ${activeEvent.title} on Instagram`}
+                        >
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="instagram-icon">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                          </svg>
+                          <span>VIEW ON INSTAGRAM →</span>
+                        </a>
+                      )}
                     </div>
                   )}
                 </article>
@@ -496,8 +535,18 @@ export default function PastEvents() {
 
                         <h3 className="mobile-entry-title">{evt.title}</h3>
 
-                        {/* Event Photo Carousel or Clean Placeholder */}
-                        {hasPhotos ? (
+                        {/* Event Video, Photo Carousel, or Clean Placeholder */}
+                        {evt.youtubeId ? (
+                          <div className="mobile-video-container">
+                            <iframe
+                              src={`https://www.youtube.com/embed/${evt.youtubeId}?rel=0`}
+                              title={`${evt.title} Video Showcase`}
+                              className="mobile-video-iframe"
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                              allowFullScreen
+                            />
+                          </div>
+                        ) : hasPhotos ? (
                           <EventPhotoCarousel
                             key={evt.id}
                             images={evt.images}
@@ -526,17 +575,36 @@ export default function PastEvents() {
                           </div>
                         )}
 
-                        {/* Media Action */}
-                        {evt.actionUrl && (
+                        {/* Media Actions */}
+                        {(evt.actionUrl || evt.instagramUrl) && (
                           <div className="mobile-entry-action-wrap">
-                            <a
-                              href={evt.actionUrl}
-                              target={evt.actionUrl.startsWith('http') ? '_blank' : undefined}
-                              rel={evt.actionUrl.startsWith('http') ? 'noopener noreferrer' : undefined}
-                              className="mobile-entry-action-btn"
-                            >
-                              <span>{evt.actionLabel || 'VIEW PHOTO GALLERY →'}</span>
-                            </a>
+                            {evt.actionUrl && (
+                              <a
+                                href={evt.actionUrl}
+                                target={evt.actionUrl.startsWith('http') || evt.actionUrl.startsWith('/images') ? '_blank' : undefined}
+                                rel={evt.actionUrl.startsWith('http') || evt.actionUrl.startsWith('/images') ? 'noopener noreferrer' : undefined}
+                                className="mobile-entry-action-btn"
+                              >
+                                <span>{evt.actionLabel || 'VIEW PHOTO GALLERY →'}</span>
+                              </a>
+                            )}
+
+                            {evt.instagramUrl && (
+                              <a
+                                href={evt.instagramUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="mobile-entry-instagram-btn"
+                                aria-label={`View ${evt.title} on Instagram`}
+                              >
+                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="instagram-icon">
+                                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                </svg>
+                                <span>VIEW ON INSTAGRAM →</span>
+                              </a>
+                            )}
                           </div>
                         )}
                       </div>
