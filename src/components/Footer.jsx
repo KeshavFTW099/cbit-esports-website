@@ -96,6 +96,9 @@ export default function Footer() {
           <p className="footer-copy">
             © {currentYear} {CLUB_DETAILS.name}. All rights reserved.
           </p>
+          <p className="footer-copy">
+            Made by Keshav & Hannish
+          </p>
           <p className="footer-attribution">
             Chaitanya Bharathi Institute of Technology (Autonomous), Hyderabad - 500075
           </p>
