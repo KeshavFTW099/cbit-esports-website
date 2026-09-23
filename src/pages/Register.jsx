@@ -3,7 +3,7 @@ import { UPCOMING_EVENTS } from '../data/events';
 import './Pages.css';
 
 export default function Register() {
-  const [selectedEvent, setSelectedEvent] = useState(UPCOMING_EVENTS[0]);
+  const [selectedEvent, setSelectedEvent] = useState(UPCOMING_EVENTS[0] || null);
   const [formData, setFormData] = useState({
     teamName: '',
     captainName: '',
@@ -19,6 +19,47 @@ export default function Register() {
     e.preventDefault();
     setSubmitted(true);
   };
+
+  if (!selectedEvent) {
+    return (
+      <div className="page-container">
+        <section className="page-hero">
+          <div className="container">
+            <span className="section-badge">Competition Portal</span>
+            <h1 className="page-hero-title">Tournament Registration</h1>
+            <p className="page-hero-desc">
+              Register your team or solo entry for upcoming CBIT Esports tournaments, scrims, and campus LANs.
+            </p>
+          </div>
+        </section>
+        <div className="container" style={{ textAlign: 'center', padding: '80px 20px', minHeight: '40vh' }}>
+          <div style={{ display: 'inline-block', padding: '32px', backgroundColor: 'var(--bg-secondary)', borderRadius: '12px', border: '1px solid var(--border-card)' }}>
+            <svg 
+              xmlns="http://www.w3.org/2000/svg" 
+              width="48" 
+              height="48" 
+              viewBox="0 0 24 24" 
+              fill="none" 
+              stroke="var(--accent-gold)" 
+              strokeWidth="1.5" 
+              strokeLinecap="round" 
+              strokeLinejoin="round"
+              style={{ marginBottom: '16px', display: 'inline-block' }}
+            >
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            <h2 style={{ fontSize: '24px', color: 'var(--text-primary)', marginBottom: '12px' }}>No Active Events</h2>
+            <p style={{ fontSize: '15px', color: 'var(--text-secondary)', maxWidth: '400px', margin: '0 auto', lineHeight: '1.6' }}>
+              There are currently no tournaments or events open for registration. Check back later or follow our announcements!
+            </p>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="page-container">

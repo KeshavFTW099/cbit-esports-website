@@ -1,48 +1,7 @@
 // Structured real event data for CBIT Esports
 // Sourced directly from official CBIT Esports Club records and confirmed activations
 
-export const UPCOMING_EVENTS = [
-  {
-    id: 'cbit-invitational-2026',
-    title: 'CBIT Inter-College Esports Invitational',
-    category: 'Valorant & BGMI',
-    date: 'April 2026',
-    time: '10:00 AM IST',
-    venue: 'CBIT Campus & Online',
-    status: 'REGISTRATION OPEN',
-    isOpen: true,
-    shortDescription: 'The flagship inter-college esports tournament featuring premier collegiate teams competing in Valorant and BGMI.',
-    fullDescription: 'CBIT Esports welcomes collegiate rosters from across Telangana and Andhra Pradesh to battle for supremacy, championship trophies, and partner rewards. Open to all verified college students.',
-    rules: [
-      'Valid college student ID required for all players',
-      'Standard competitive rulesets apply for Valorant & BGMI',
-      'Cross-college teams are not permitted for collegiate bracket',
-      'Registration closes 48 hours prior to bracket seeding'
-    ],
-    registrationDeadline: 'March 31, 2026',
-    teamSize: '5 Players + 1 Sub',
-    featuredImage: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1200&auto=format&fit=crop'
-  },
-  {
-    id: 'cbit-weekly-scrims-2026',
-    title: 'CBIT Campus Scrims: Season 4',
-    category: 'Community Scrimmage',
-    date: 'Ongoing / Weekly',
-    time: 'Every Saturday, 6:00 PM',
-    venue: 'Official CBIT Esports Discord',
-    status: 'OPEN WEEKLY',
-    isOpen: true,
-    shortDescription: 'Weekly competitive scrimmages for CBIT students across tactical shooters and battle royale titles.',
-    fullDescription: 'Weekly friendly yet fierce community matches to scout talent, practice team communication, and build campus leaderboards.',
-    rules: [
-      'Exclusively for CBIT students and alumni',
-      'Custom room credentials shared in verified Discord role'
-    ],
-    registrationDeadline: 'Weekly Fridays',
-    teamSize: 'Solos / Duos / Squads',
-    featuredImage: 'https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1200&auto=format&fit=crop'
-  }
-];
+export const UPCOMING_EVENTS = [];
 
 export const PAST_EVENTS_BY_YEAR = {
   '2026': [
@@ -334,3 +293,4 @@ export const ALL_PARTNERS = [
     logo: '/partners/free-fire-transparent.png'
   }
 ];
+
