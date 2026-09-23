@@ -1,11 +1,11 @@
 import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { UPCOMING_EVENTS, PAST_EVENTS, ALL_PARTNERS } from '../data/events';
+import { ALL_PARTNERS } from '../data/events';
 import { CLUB_DETAILS, WHAT_WE_DO } from '../data/clubInfo';
+import CurrentSpotlight from '../components/CurrentSpotlight';
 import './Home.css';
 
 export default function Home() {
-  const featuredEvent = UPCOMING_EVENTS[0];
 
   const [isPlaying, setIsPlaying] = useState(true);
   const [isMuted, setIsMuted] = useState(true);
@@ -151,69 +151,10 @@ export default function Home() {
       </section>
 
       {/* ====================================================================
-          2. FEATURED / CURRENT EVENT
-          Authentic photography, real/placeholder structured data, zero fabrication
+          2. CURRENT SPOTLIGHT
+          Editorial empty state with direct Past Events gateway
           ==================================================================== */}
-      <section className="section section-alt" aria-labelledby="featured-event-heading">
-        <div className="container">
-          <div className="section-header">
-            <span className="section-badge">Current Spotlight</span>
-            <h2 id="featured-event-heading" className="section-heading">Featured Event</h2>
-            <p className="section-subheading">
-              Our current active tournament registration and collegiate competition.
-            </p>
-          </div>
-
-          <div className="featured-event-card">
-            <div className="featured-event-media">
-              <img
-                src={featuredEvent.featuredImage}
-                alt={featuredEvent.title}
-                className="featured-event-img"
-                loading="lazy"
-              />
-              <div className="featured-status-pill">
-                <span className="status-indicator"></span>
-                {featuredEvent.status}
-              </div>
-            </div>
-
-            <div className="featured-event-body">
-              <div className="event-meta-row">
-                <span className="tag tag-gold">{featuredEvent.category}</span>
-                <span className="event-date-text">{featuredEvent.date}</span>
-              </div>
-
-              <h3 className="featured-event-title">{featuredEvent.title}</h3>
-              <p className="featured-event-desc">{featuredEvent.shortDescription}</p>
-
-              <div className="event-details-grid">
-                <div className="detail-item">
-                  <span className="detail-label">Format</span>
-                  <span className="detail-val">{featuredEvent.teamSize}</span>
-                </div>
-                <div className="detail-item">
-                  <span className="detail-label">Venue</span>
-                  <span className="detail-val">{featuredEvent.venue}</span>
-                </div>
-              </div>
-
-              <div className="featured-event-actions">
-                <Link to="/register" className="btn btn-primary">
-                  Register Squad
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                    <line x1="5" y1="12" x2="19" y2="12" />
-                    <polyline points="12 5 19 12 12 19" />
-                  </svg>
-                </Link>
-                <Link to="/register" className="btn btn-text">
-                  View full rules & schedule →
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <CurrentSpotlight active={false} />
 
       {/* ====================================================================
           3. ABOUT CBIT ESPORTS

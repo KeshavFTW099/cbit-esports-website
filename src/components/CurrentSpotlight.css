@@ -1,0 +1,436 @@
+/* ==========================================================================
+   CURRENT SPOTLIGHT SECTION STYLES
+   Editorial, Human-Designed, Asymmetric Layout
+   Matte Black (#111110) + Warm Gold (#F2B544) + Thin Hairlines
+   ========================================================================== */
+
+.current-spotlight-section {
+  position: relative;
+  padding: 64px 0 72px;
+  background-color: var(--bg-primary);
+  border-bottom: 1px solid var(--border-subtle);
+  overflow: hidden;
+}
+
+/* --------------------------------------------------------------------------
+   Editorial Header Treatment: 01 ────────── CURRENT SPOTLIGHT
+   -------------------------------------------------------------------------- */
+.spotlight-editorial-header {
+  margin-bottom: 40px;
+}
+
+.spotlight-title-group {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.spotlight-index-label {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.15em;
+  color: var(--accent-gold);
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.spotlight-heading-text {
+  font-size: 13px;
+  font-weight: var(--weight-semibold);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.spotlight-divider-line {
+  flex-grow: 1;
+  height: 1px;
+  background-color: var(--border-subtle);
+  min-width: 32px;
+}
+
+/* --------------------------------------------------------------------------
+   Intentional Editorial Empty State
+   Asymmetric two-column composition with generous breathing room
+   -------------------------------------------------------------------------- */
+.spotlight-editorial-container {
+  position: relative;
+  padding: 8px 0;
+}
+
+/* Strictly ONE subtle visual element: faint oversized CBIT Esports watermark */
+.spotlight-identity-watermark {
+  position: absolute;
+  right: -24px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 340px;
+  height: 340px;
+  opacity: 0.04;
+  pointer-events: none;
+  user-select: none;
+  filter: grayscale(100%);
+  z-index: 1;
+}
+
+.spotlight-watermark-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.spotlight-editorial-content {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 56px;
+  align-items: baseline;
+}
+
+/* Left Column: Statement */
+.spotlight-statement-block {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.spotlight-status-indicator-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.spotlight-idle-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--accent-gold);
+  opacity: 0.85;
+}
+
+.spotlight-status-caption {
+  font-size: 11px;
+  font-weight: var(--weight-semibold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.spotlight-statement-main {
+  font-size: 38px;
+  font-weight: var(--weight-bold);
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.spotlight-statement-sub {
+  font-size: 19px;
+  font-weight: var(--weight-regular);
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Right Column: Editorial Past Events Discovery Gateway */
+.spotlight-gateway-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.spotlight-gateway-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 36px;
+  border-left: 1px solid var(--border-subtle);
+}
+
+.spotlight-gateway-eyebrow {
+  font-size: 11px;
+  font-weight: var(--weight-semibold);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+  margin-bottom: 12px;
+}
+
+.spotlight-gateway-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: var(--transition-fast);
+  cursor: pointer;
+  border-bottom: 1px solid transparent;
+}
+
+.gateway-cta-label {
+  font-size: 16px;
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.04em;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  transition: color 200ms ease;
+}
+
+.gateway-cta-arrow {
+  font-size: 19px;
+  font-weight: var(--weight-bold);
+  color: var(--accent-gold);
+  transition: transform 200ms cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-block;
+  line-height: 1;
+}
+
+.spotlight-gateway-cta:hover .gateway-cta-label {
+  color: var(--accent-gold);
+}
+
+.spotlight-gateway-cta:hover .gateway-cta-arrow {
+  transform: translateX(6px);
+}
+
+.spotlight-gateway-note {
+  font-size: 14px;
+  font-weight: var(--weight-regular);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-top: 10px;
+  max-width: 400px;
+}
+
+/* --------------------------------------------------------------------------
+   Future Live State Card Styling (active: true)
+   -------------------------------------------------------------------------- */
+.spotlight-live-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  transition: var(--transition-fast);
+}
+
+.spotlight-live-card:hover {
+  border-color: var(--border-hover);
+}
+
+.spotlight-live-media {
+  position: relative;
+  min-height: 320px;
+  background-color: #0E0E0D;
+}
+
+.spotlight-live-media-element {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.spotlight-status-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: rgba(17, 17, 16, 0.92);
+  border: 1px solid var(--accent-gold-border);
+  color: var(--accent-gold);
+  padding: 6px 12px;
+  border-radius: var(--radius-xs);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.spotlight-live-pulse {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #10B981;
+  box-shadow: 0 0 6px rgba(16, 185, 129, 0.6);
+}
+
+.spotlight-live-body {
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.spotlight-live-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.spotlight-live-date {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+}
+
+.spotlight-live-title {
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-semibold);
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  line-height: var(--leading-tight);
+}
+
+.spotlight-live-desc {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: var(--leading-body);
+  margin-bottom: 24px;
+}
+
+.spotlight-live-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* --------------------------------------------------------------------------
+   Mobile-First Responsiveness
+   Carefully tuned for 1024px, 768px, 430px, 390px, 360px
+   -------------------------------------------------------------------------- */
+@media (max-width: 960px) {
+  .current-spotlight-section {
+    padding: 52px 0 60px;
+  }
+
+  .spotlight-editorial-content {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .spotlight-gateway-inner {
+    padding-left: 0;
+    border-left: none;
+    padding-top: 28px;
+    border-top: 1px solid var(--border-subtle);
+    width: 100%;
+  }
+
+  .spotlight-identity-watermark {
+    width: 260px;
+    height: 260px;
+    right: 0;
+    opacity: 0.035;
+  }
+
+  .spotlight-statement-main {
+    font-size: 32px;
+  }
+
+  .spotlight-live-card {
+    grid-template-columns: 1fr;
+  }
+
+  .spotlight-live-media {
+    min-height: 240px;
+    height: 240px;
+  }
+
+  .spotlight-live-body {
+    padding: 24px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .current-spotlight-section {
+    padding: 44px 0 50px;
+  }
+
+  .spotlight-editorial-header {
+    margin-bottom: 28px;
+  }
+
+  .spotlight-statement-main {
+    font-size: 28px;
+  }
+
+  .spotlight-statement-sub {
+    font-size: 17px;
+  }
+
+  .spotlight-gateway-cta {
+    padding: 12px 0;
+    min-height: 48px;
+  }
+}
+
+@media (max-width: 480px) {
+  .current-spotlight-section {
+    padding: 38px 0 44px;
+  }
+
+  .spotlight-editorial-header {
+    margin-bottom: 24px;
+  }
+
+  .spotlight-statement-main {
+    font-size: 24px;
+    letter-spacing: -0.02em;
+  }
+
+  .spotlight-statement-sub {
+    font-size: 16px;
+  }
+
+  .gateway-cta-label {
+    font-size: 15px;
+  }
+
+  .spotlight-gateway-note {
+    font-size: 13px;
+    line-height: 1.55;
+  }
+
+  .spotlight-identity-watermark {
+    width: 200px;
+    height: 200px;
+    right: -20px;
+    opacity: 0.03;
+  }
+}
+
+@media (max-width: 360px) {
+  .current-spotlight-section {
+    padding: 32px 0 38px;
+  }
+
+  .spotlight-statement-main {
+    font-size: 22px;
+  }
+
+  .spotlight-title-group {
+    gap: 10px;
+  }
+
+  .spotlight-heading-text {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+  }
+
+  .gateway-cta-label {
+    font-size: 14px;
+    letter-spacing: 0.02em;
+  }
+}

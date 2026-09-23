@@ -1,12 +1,14 @@
 /* ==========================================================================
-   CBIT ESPORTS - HEADER STYLES
-   Refined Navbar Architecture:
-   - Solid #0B0B0A background (darker than #111110 page body)
-   - Left-aligned brand positioning with comfortable viewport breathing room
-   - Subtle 1.04x smooth hover interaction on navigation items
-   - Subtle solid 1px border separation (no blur, no glow, no glassmorphism)
+   CBIT ESPORTS - REFINED FLOATING NAVBAR STYLES
+   - Dark floating physical panel sitting above the website
+   - Inset horizontal margins, slight vertical top offset
+   - Moderate softly curved corners (NOT a pill / capsule)
+   - Deep matte black (#080807) sitting above matte charcoal (#111110)
+   - Subtle tactile hover expansion + clean active indicator
+   - Mobile-first compact expanding drawer
    ========================================================================== */
 
+/* Outer sticky positioning wrapper */
 .site-header {
   position: sticky;
   top: 0;
@@ -14,25 +16,35 @@
   right: 0;
   z-index: 1000;
   width: 100%;
+  pointer-events: none;
+  padding: 0;
+}
+
+/* Floating Physical Panel (Desktop) */
+.header-floating-panel {
+  position: relative;
+  pointer-events: auto;
+  max-width: 1240px;
+  width: calc(100% - 48px);
+  margin: 12px auto 0;
   background-color: #080807;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), 0 1px 3px rgba(0, 0, 0, 0.35);
-  transition: var(--transition-fast);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.48), 0 2px 6px rgba(0, 0, 0, 0.32);
+  transition: border-color 200ms ease, box-shadow 200ms ease;
 }
 
 .header-container {
   width: 100%;
-  max-width: 100%;
-  margin: 0;
-  padding: 0 28px;
-  height: var(--header-height);
+  height: 64px;
+  padding: 0 20px 0 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: var(--space-md);
 }
 
-/* Brand styling: moved comfortably toward left edge */
+/* Brand styling: Left aligned */
 .header-brand {
   display: inline-flex;
   align-items: center;
@@ -42,8 +54,8 @@
 }
 
 .header-logo-img {
-  width: 38px;
-  height: 38px;
+  width: 36px;
+  height: 36px;
   object-fit: contain;
   border-radius: var(--radius-xs);
   transition: transform 200ms cubic-bezier(0.16, 1, 0.3, 1);
@@ -83,39 +95,56 @@
   align-items: center;
 }
 
+/* Nav Link Item - Subtle Tactile Expansion on Hover */
 .nav-link {
-  display: inline-block;
-  font-size: var(--text-sm);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13.5px;
   font-weight: var(--weight-medium);
   color: var(--text-secondary);
-  padding: 8px 14px;
-  border-radius: var(--radius-xs);
+  padding: 7px 12px;
+  border-radius: 4px;
   position: relative;
   letter-spacing: 0.01em;
-  transform-origin: center center;
-  transition: color 200ms cubic-bezier(0.16, 1, 0.3, 1), transform 200ms cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: transform;
   white-space: nowrap;
+  background-color: transparent;
+  transform-origin: center center;
+  transition: color 200ms cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 200ms cubic-bezier(0.16, 1, 0.3, 1),
+              padding 200ms cubic-bezier(0.16, 1, 0.3, 1),
+              transform 200ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, padding;
 }
 
-/* Subtle desktop hover interaction: 1.04x smooth scale, no bounce, no glow */
+.nav-link-text {
+  display: inline-block;
+  line-height: 1;
+}
+
+/* Desktop Hover Interaction: Subtle scale + horizontal padding expansion + gold text */
 @media (hover: hover) and (pointer: fine) {
   .nav-link:hover {
-    color: var(--text-primary);
-    transform: scale(1.04);
+    color: var(--accent-gold);
+    background-color: rgba(242, 181, 68, 0.04);
+    padding: 7px 15px;
+    transform: scale(1.02);
   }
 }
 
+/* Desktop Active State: Warm gold text, subtle background highlight, small gold underline */
 .nav-link.active {
   color: var(--accent-gold);
+  background-color: rgba(242, 181, 68, 0.06);
+  font-weight: var(--weight-semibold);
 }
 
 .nav-link.active::after {
   content: '';
   position: absolute;
   bottom: 0px;
-  left: 14px;
-  right: 14px;
+  left: 12px;
+  right: 12px;
   height: 2px;
   background-color: var(--accent-gold);
   border-radius: 1px;
@@ -126,60 +155,61 @@
   display: none;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   padding: 0;
   color: var(--text-primary);
   background: transparent;
-  border: 1px solid #282824;
-  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
   cursor: pointer;
   transition: var(--transition-fast);
+  flex-shrink: 0;
 }
 
 .mobile-menu-btn:hover {
-  border-color: var(--border-hover);
+  border-color: var(--accent-gold-border);
   color: var(--accent-gold);
+  background-color: rgba(242, 181, 68, 0.04);
 }
 
-/* Mobile Drawer */
-.mobile-drawer {
+/* --------------------------------------------------------------------------
+   Mobile Expanding Drawer Panel
+   Attached as a clean floating card directly beneath the floating navbar
+   -------------------------------------------------------------------------- */
+.mobile-panel-dropdown {
   display: none;
-  position: fixed;
-  top: var(--header-height-mobile);
+  position: absolute;
+  top: calc(100% + 8px);
   left: 0;
   right: 0;
-  bottom: 0;
-  height: calc(100dvh - var(--header-height-mobile));
+  width: 100%;
   background-color: #080807;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
-  overflow-y: auto;
-  z-index: 999;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.65), 0 2px 8px rgba(0, 0, 0, 0.35);
+  padding: 16px;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-8px);
-  transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s ease;
+  transform: translateY(-6px);
+  transition: opacity 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              visibility 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1001;
+  pointer-events: none;
 }
 
-.mobile-drawer.open {
+.mobile-panel-dropdown.open {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
-}
-
-.mobile-drawer-content {
-  padding: var(--space-lg) var(--container-padding);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 100%;
+  pointer-events: auto;
 }
 
 .mobile-nav-list {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 4px;
 }
 
 .mobile-nav-item {
@@ -190,49 +220,92 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 14px;
-  font-size: var(--text-lg);
+  padding: 12px 14px;
+  font-size: 15px;
   font-weight: var(--weight-medium);
   color: var(--text-primary);
-  border-radius: var(--radius-sm);
+  border-radius: 6px;
   border: 1px solid transparent;
   transition: var(--transition-fast);
-  min-height: 52px;
+  min-height: 48px;
+}
+
+.mobile-nav-arrow {
+  font-size: 16px;
+  color: var(--text-muted);
+  transition: transform 180ms ease, color 180ms ease;
 }
 
 .mobile-nav-link:hover,
 .mobile-nav-link.active {
   background-color: var(--bg-card);
-  border-color: var(--border-subtle);
+  border-color: rgba(242, 181, 68, 0.15);
   color: var(--accent-gold);
-  padding-left: 18px;
 }
 
-.mobile-drawer-footer {
-  margin-top: var(--space-xl);
-  padding-top: var(--space-md);
-  border-top: 1px solid #1F1F1D;
+.mobile-nav-link:hover .mobile-nav-arrow,
+.mobile-nav-link.active .mobile-nav-arrow {
+  color: var(--accent-gold);
+  transform: translateX(4px);
+}
+
+.mobile-panel-footer {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .mobile-institution-tag {
-  font-size: var(--text-xs);
+  font-size: 11px;
   color: var(--text-muted);
-  line-height: 1.5;
+  line-height: 1.4;
+  margin: 0;
 }
 
-/* ==========================================================================
+/* Dimmed backdrop when mobile drawer is open */
+.mobile-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 998;
+  pointer-events: auto;
+}
+
+/* --------------------------------------------------------------------------
    RESPONSIVE BREAKPOINTS
-   ========================================================================== */
+   -------------------------------------------------------------------------- */
 @media (min-width: 1440px) {
-  .header-container {
-    padding: 0 36px;
+  .header-floating-panel {
+    max-width: 1300px;
+    width: calc(100% - 64px);
+    margin: 16px auto 0;
+  }
+}
+
+@media (max-width: 1024px) {
+  .nav-link {
+    font-size: 13px;
+    padding: 7px 10px;
+  }
+  
+  .nav-list {
+    gap: 2px;
   }
 }
 
 @media (max-width: 960px) {
+  .header-floating-panel {
+    width: calc(100% - 32px);
+    margin: 10px auto 0;
+    border-radius: 6px;
+  }
+
   .header-container {
-    height: var(--header-height-mobile);
-    padding: 0 20px;
+    height: 58px;
+    padding: 0 16px;
   }
 
   .desktop-nav {
@@ -243,18 +316,24 @@
     display: flex;
   }
 
-  .mobile-drawer {
+  .mobile-panel-dropdown {
     display: block;
   }
 
   .header-brand-text {
-    font-size: var(--text-sm);
+    font-size: 14px;
   }
 }
 
 @media (max-width: 480px) {
+  .header-floating-panel {
+    width: calc(100% - 20px);
+    margin: 8px auto 0;
+  }
+
   .header-container {
-    padding: 0 16px;
+    height: 54px;
+    padding: 0 12px;
   }
 
   .header-brand {
@@ -262,8 +341,8 @@
   }
 
   .header-logo-img {
-    width: 34px;
-    height: 34px;
+    width: 32px;
+    height: 32px;
   }
 
   .header-brand-text {
@@ -272,12 +351,16 @@
 }
 
 @media (max-width: 360px) {
+  .header-floating-panel {
+    width: calc(100% - 16px);
+    margin: 6px auto 0;
+  }
+
   .header-container {
-    padding: 0 12px;
+    padding: 0 10px;
   }
 
   .header-brand-text {
     font-size: 12px;
-    letter-spacing: 0.02em;
   }
 }

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { CLUB_DETAILS } from '../data/clubInfo';
 import './Pages.css';
 
 export default function Collaborate() {
