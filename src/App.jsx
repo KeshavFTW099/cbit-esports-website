@@ -31,6 +31,7 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/register" element={<Register />} />
             <Route path="/past-events" element={<PastEvents />} />
+            <Route path="/past-events/:year" element={<PastEvents />} />
             <Route path="/join-us" element={<JoinUs />} />
             <Route path="/collaborate" element={<Collaborate />} />
             <Route path="/contact" element={<Contact />} />

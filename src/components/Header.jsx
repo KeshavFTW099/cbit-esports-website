@@ -1,34 +1,54 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { AVAILABLE_YEARS } from '../data/events';
 import './Header.css';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isMobilePastEventsOpen, setIsMobilePastEventsOpen] = useState(true);
   const location = useLocation();
+  const dropdownRef = useRef(null);
 
   const [prevPath, setPrevPath] = useState(location.pathname);
   if (prevPath !== location.pathname) {
     setPrevPath(location.pathname);
     setIsMenuOpen(false);
+    setIsDropdownOpen(false);
   }
 
-  // Close menu on Escape key press
+  // Close menus on Escape key press or click outside
   useEffect(() => {
     const handleKeyDown = (e) => {
-      if (e.key === 'Escape') setIsMenuOpen(false);
+      if (e.key === 'Escape') {
+        setIsMenuOpen(false);
+        setIsDropdownOpen(false);
+      }
     };
+    const handleClickOutside = (e) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+        setIsDropdownOpen(false);
+      }
+    };
+
     window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
   }, []);
 
   const navLinks = [
     { to: '/', label: 'Home' },
     { to: '/register', label: 'Register' },
-    { to: '/past-events', label: 'Past Events' },
+    { to: '/past-events', label: 'Past Events', isDropdown: true },
     { to: '/join-us', label: 'Join Us' },
     { to: '/collaborate', label: 'Collaborate With Us' },
     { to: '/contact', label: 'Contact Us' },
   ];
+
+  const isPastEventsActive = location.pathname.startsWith('/past-events');
 
   return (
     <header className="site-header" role="banner">
@@ -53,6 +73,76 @@ export default function Header() {
           <nav className="desktop-nav" aria-label="Main Navigation">
             <ul className="nav-list">
               {navLinks.map((link) => {
+                if (link.isDropdown) {
+                  return (
+                    <li
+                      key={link.to}
+                      className="nav-item nav-item-dropdown"
+                      ref={dropdownRef}
+                      onMouseEnter={() => setIsDropdownOpen(true)}
+                      onMouseLeave={() => setIsDropdownOpen(false)}
+                    >
+                      <div className="dropdown-trigger-wrapper">
+                        <Link
+                          to={link.to}
+                          className={`nav-link ${isPastEventsActive ? 'active' : ''}`}
+                          aria-current={isPastEventsActive ? 'page' : undefined}
+                          onClick={() => setIsDropdownOpen(false)}
+                        >
+                          <span className="nav-link-text">{link.label}</span>
+                          <span
+                            className={`dropdown-caret ${isDropdownOpen ? 'open' : ''}`}
+                            aria-hidden="true"
+                          >
+                            ▾
+                          </span>
+                        </Link>
+                      </div>
+
+                      {/* Editorial Year Dropdown Menu */}
+                      <div
+                        className={`nav-dropdown-menu ${isDropdownOpen ? 'open' : ''}`}
+                        role="menu"
+                        aria-label="Past Events Archive Years"
+                      >
+                        <div className="dropdown-menu-header">
+                          <span className="dropdown-menu-title">EVENT ARCHIVE</span>
+                        </div>
+                        <ul className="dropdown-year-list">
+                          {AVAILABLE_YEARS.map((yr) => {
+                            const isYearActive = location.pathname === `/past-events/${yr}`;
+                            return (
+                              <li key={yr} role="none">
+                                <Link
+                                  to={`/past-events/${yr}`}
+                                  className={`dropdown-year-link ${isYearActive ? 'active' : ''}`}
+                                  role="menuitem"
+                                  onClick={() => setIsDropdownOpen(false)}
+                                >
+                                  <span className="dropdown-year-num">{yr}</span>
+                                  <span className="dropdown-year-label">
+                                    {yr === '2026' || yr === '2025' ? 'Verified Archive' : 'Archive'}
+                                  </span>
+                                </Link>
+                              </li>
+                            );
+                          })}
+                        </ul>
+                        <div className="dropdown-menu-footer">
+                          <Link
+                            to="/past-events"
+                            className="dropdown-all-link"
+                            onClick={() => setIsDropdownOpen(false)}
+                          >
+                            <span>View Full Timeline</span>
+                            <span aria-hidden="true">→</span>
+                          </Link>
+                        </div>
+                      </div>
+                    </li>
+                  );
+                }
+
                 const isActive = location.pathname === link.to;
                 return (
                   <li key={link.to} className="nav-item">
@@ -119,6 +209,55 @@ export default function Header() {
         >
           <ul className="mobile-nav-list">
             {navLinks.map((link) => {
+              if (link.isDropdown) {
+                return (
+                  <li key={link.to} className="mobile-nav-item mobile-nav-dropdown-item">
+                    <div className="mobile-dropdown-header">
+                      <Link
+                        to={link.to}
+                        className={`mobile-nav-link ${isPastEventsActive ? 'active' : ''}`}
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        <span>{link.label}</span>
+                      </Link>
+                      <button
+                        type="button"
+                        className="mobile-subnav-toggle"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setIsMobilePastEventsOpen(!isMobilePastEventsOpen);
+                        }}
+                        aria-expanded={isMobilePastEventsOpen}
+                        aria-label="Toggle Past Events Years"
+                      >
+                        <span className={`mobile-caret ${isMobilePastEventsOpen ? 'open' : ''}`}>▾</span>
+                      </button>
+                    </div>
+
+                    {/* Mobile Sub-Years Grid */}
+                    {isMobilePastEventsOpen && (
+                      <div className="mobile-sub-years-container">
+                        <div className="mobile-sub-years-grid">
+                          {AVAILABLE_YEARS.map((yr) => {
+                            const isYrActive = location.pathname === `/past-events/${yr}`;
+                            return (
+                              <Link
+                                key={yr}
+                                to={`/past-events/${yr}`}
+                                className={`mobile-sub-year-chip ${isYrActive ? 'active' : ''}`}
+                                onClick={() => setIsMenuOpen(false)}
+                              >
+                                {yr}
+                              </Link>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    )}
+                  </li>
+                );
+              }
+
               const isActive = location.pathname === link.to;
               return (
                 <li key={link.to} className="mobile-nav-item">

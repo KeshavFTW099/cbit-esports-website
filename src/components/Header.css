@@ -1,11 +1,11 @@
 /* ==========================================================================
    CBIT ESPORTS - REFINED FLOATING NAVBAR STYLES
-   - Dark floating physical panel sitting above the website
+   - Dark warm charcoal panel (#1B1B19) floating slightly above page (#111110)
    - Inset horizontal margins, slight vertical top offset
    - Moderate softly curved corners (NOT a pill / capsule)
-   - Deep matte black (#080807) sitting above matte charcoal (#111110)
+   - Dropdown menu for Past Events (2026, 2025, 2024, 2023)
    - Subtle tactile hover expansion + clean active indicator
-   - Mobile-first compact expanding drawer
+   - Mobile-first compact expanding drawer with sub-years navigation
    ========================================================================== */
 
 /* Outer sticky positioning wrapper */
@@ -27,11 +27,11 @@
   max-width: 1240px;
   width: calc(100% - 48px);
   margin: 12px auto 0;
-  background-color: #080807;
+  background-color: #191918; /* Lighter dark charcoal than #111110 main page body */
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 8px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.48), 0 2px 6px rgba(0, 0, 0, 0.32);
-  transition: border-color 200ms ease, box-shadow 200ms ease;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.36), 0 2px 6px rgba(0, 0, 0, 0.22);
+  transition: border-color 200ms ease, box-shadow 200ms ease, background-color 200ms ease;
 }
 
 .header-container {
@@ -93,6 +93,7 @@
 .nav-item {
   display: inline-flex;
   align-items: center;
+  position: relative;
 }
 
 /* Nav Link Item - Subtle Tactile Expansion on Hover */
@@ -100,6 +101,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 6px;
   font-size: 13.5px;
   font-weight: var(--weight-medium);
   color: var(--text-secondary);
@@ -115,11 +117,25 @@
               padding 200ms cubic-bezier(0.16, 1, 0.3, 1),
               transform 200ms cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform, padding;
+  cursor: pointer;
 }
 
 .nav-link-text {
   display: inline-block;
   line-height: 1;
+}
+
+.dropdown-caret {
+  font-size: 11px;
+  display: inline-block;
+  line-height: 1;
+  transition: transform 200ms ease;
+  color: var(--text-muted);
+}
+
+.dropdown-caret.open {
+  transform: rotate(180deg);
+  color: var(--accent-gold);
 }
 
 /* Desktop Hover Interaction: Subtle scale + horizontal padding expansion + gold text */
@@ -129,6 +145,10 @@
     background-color: rgba(242, 181, 68, 0.04);
     padding: 7px 15px;
     transform: scale(1.02);
+  }
+
+  .nav-link:hover .dropdown-caret {
+    color: var(--accent-gold);
   }
 }
 
@@ -150,6 +170,125 @@
   border-radius: 1px;
 }
 
+/* --------------------------------------------------------------------------
+   Desktop Dropdown Menu (Past Events)
+   -------------------------------------------------------------------------- */
+.nav-item-dropdown {
+  position: relative;
+}
+
+.dropdown-trigger-wrapper {
+  display: inline-flex;
+}
+
+.nav-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  min-width: 200px;
+  background-color: #191918;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45), 0 2px 8px rgba(0, 0, 0, 0.3);
+  padding: 8px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 180ms ease, transform 180ms ease, visibility 180ms ease;
+  z-index: 1005;
+}
+
+.nav-dropdown-menu.open,
+.nav-item-dropdown:hover .nav-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+.dropdown-menu-header {
+  padding: 6px 10px 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  margin-bottom: 4px;
+}
+
+.dropdown-menu-title {
+  font-size: 10px;
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.dropdown-year-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.dropdown-year-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+.dropdown-year-num {
+  font-size: 14px;
+  font-weight: var(--weight-semibold);
+  color: var(--text-primary);
+  transition: color 150ms ease;
+}
+
+.dropdown-year-label {
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+}
+
+.dropdown-year-link:hover,
+.dropdown-year-link.active {
+  background-color: rgba(242, 181, 68, 0.08);
+}
+
+.dropdown-year-link:hover .dropdown-year-num,
+.dropdown-year-link.active .dropdown-year-num {
+  color: var(--accent-gold);
+}
+
+.dropdown-year-link:hover .dropdown-year-label,
+.dropdown-year-link.active .dropdown-year-label {
+  color: rgba(242, 181, 68, 0.8);
+}
+
+.dropdown-menu-footer {
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.dropdown-all-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 10px;
+  font-size: 12px;
+  font-weight: var(--weight-medium);
+  color: var(--text-secondary);
+  border-radius: 4px;
+  transition: var(--transition-fast);
+  text-decoration: none;
+}
+
+.dropdown-all-link:hover {
+  color: var(--accent-gold);
+  background-color: rgba(242, 181, 68, 0.04);
+}
+
 /* Mobile Menu Toggle Button */
 .mobile-menu-btn {
   display: none;
@@ -160,7 +299,7 @@
   padding: 0;
   color: var(--text-primary);
   background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 6px;
   cursor: pointer;
   transition: var(--transition-fast);
@@ -175,7 +314,6 @@
 
 /* --------------------------------------------------------------------------
    Mobile Expanding Drawer Panel
-   Attached as a clean floating card directly beneath the floating navbar
    -------------------------------------------------------------------------- */
 .mobile-panel-dropdown {
   display: none;
@@ -184,7 +322,7 @@
   left: 0;
   right: 0;
   width: 100%;
-  background-color: #080807;
+  background-color: #191918;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 8px;
   box-shadow: 0 16px 36px rgba(0, 0, 0, 0.65), 0 2px 8px rgba(0, 0, 0, 0.35);
@@ -228,6 +366,7 @@
   border: 1px solid transparent;
   transition: var(--transition-fast);
   min-height: 48px;
+  text-decoration: none;
 }
 
 .mobile-nav-arrow {
@@ -238,7 +377,7 @@
 
 .mobile-nav-link:hover,
 .mobile-nav-link.active {
-  background-color: var(--bg-card);
+  background-color: var(--bg-card-hover);
   border-color: rgba(242, 181, 68, 0.15);
   color: var(--accent-gold);
 }
@@ -247,6 +386,77 @@
 .mobile-nav-link.active .mobile-nav-arrow {
   color: var(--accent-gold);
   transform: translateX(4px);
+}
+
+/* Mobile Dropdown Container */
+.mobile-dropdown-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.mobile-dropdown-header .mobile-nav-link {
+  flex-grow: 1;
+}
+
+.mobile-subnav-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 48px;
+  color: var(--text-secondary);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.mobile-subnav-toggle:hover {
+  color: var(--accent-gold);
+}
+
+.mobile-caret {
+  display: inline-block;
+  font-size: 14px;
+  transition: transform 200ms ease;
+}
+
+.mobile-caret.open {
+  transform: rotate(180deg);
+  color: var(--accent-gold);
+}
+
+.mobile-sub-years-container {
+  padding: 4px 14px 10px;
+}
+
+.mobile-sub-years-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.mobile-sub-year-chip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 4px;
+  font-size: 13px;
+  font-weight: var(--weight-semibold);
+  color: var(--text-secondary);
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+.mobile-sub-year-chip:hover,
+.mobile-sub-year-chip.active {
+  color: var(--accent-gold);
+  background-color: rgba(242, 181, 68, 0.08);
+  border-color: rgba(242, 181, 68, 0.25);
 }
 
 .mobile-panel-footer {

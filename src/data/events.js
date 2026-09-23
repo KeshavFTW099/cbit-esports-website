@@ -47,15 +47,28 @@ export const UPCOMING_EVENTS = [
 export const PAST_EVENTS_BY_YEAR = {
   '2026': [
     {
-      id: 'ff-jjk-2026',
-      year: '2026',
+      id: 'free-fire-jjk-2026',
+      year: 2026,
       shortDate: '17 FEB',
-      fullDate: '17th February 2026',
-      title: 'Free Fire × Jujutsu Kaisen Event',
+      date: '17 February 2026',
+      fullDate: '17 February 2026',
+      title: 'Free Fire × Jujutsu Kaisen',
       shortTitle: 'FF × JJK',
       category: 'Themed Gaming Activation',
-      description: 'A Free Fire × Jujutsu Kaisen themed activation that combined gaming with pop-culture engagement. The event used the Jujutsu Kaisen theme to create a more engaging experience for students and gaming enthusiasts, bringing together competitive gameplay, entertainment and community interaction.',
-      image: '/events/ff-jjk-2026.jpg',
+      description: 'A themed gaming activation blending competitive mobile gameplay with pop-culture anime engagement. Students and gaming enthusiasts gathered on campus for structured bracket play and community interactions.',
+      thumbnail: '/images/events/2026/free-fire-jjk/01.webp',
+      image: '/images/events/2026/free-fire-jjk/01.webp',
+      images: [
+        '/images/events/2026/free-fire-jjk/01.webp',
+        '/images/events/2026/free-fire-jjk/02.webp',
+        '/images/events/2026/free-fire-jjk/03.webp',
+        '/images/events/2026/free-fire-jjk/04.webp',
+        '/images/events/2026/free-fire-jjk/05.webp'
+      ],
+      galleryUrl: 'https://drive.google.com/drive/folders/1q6T_Mq4iqm1oOtHo66s5KtAa2ve3wrwA',
+      actionType: 'drive',
+      actionUrl: 'https://drive.google.com/drive/folders/1q6T_Mq4iqm1oOtHo66s5KtAa2ve3wrwA',
+      actionLabel: 'VIEW PHOTO GALLERY →',
       partners: [
         { name: 'Free Fire', logo: '/partners/free-fire-transparent.png' },
         { name: 'Jujutsu Kaisen' }
@@ -63,43 +76,86 @@ export const PAST_EVENTS_BY_YEAR = {
       participantCount: null
     },
     {
-      id: 'real-cricket-2026',
-      year: '2026',
+      id: 'krafton-cct-real-cricket-2026',
+      year: 2026,
       shortDate: '18 FEB',
-      fullDate: '18th February 2026',
-      title: 'Real Cricket',
-      shortTitle: 'Real Cricket',
-      category: 'Campus Esports Tournament',
-      description: 'A competitive Real Cricket mobile gaming tournament organized by CBIT Esports, bringing cricket enthusiasts and mobile gamers together for a virtual cricket competition. The event provided students with an opportunity to compete in a familiar sporting format through esports, while encouraging participation, competition, and engagement within the CBIT gaming community.',
-      image: '/events/real-cricket-2026.jpg',
-      partners: [],
+      date: '18 February 2026',
+      fullDate: '18 February 2026',
+      title: 'Krafton CCT Real Cricket',
+      shortTitle: 'Krafton CCT Real Cricket',
+      category: 'Publisher Campus Tournament',
+      description: 'A competitive virtual cricket activation conducted as part of the KRAFTON Campus Cricket Tournament (CCT) at CBIT, uniting mobile gamers across campus in intense head-to-head match-ups and live stadium bracket play.',
+      thumbnail: '/images/events/2026/krafton-cct-real-cricket/01.webp',
+      image: '/images/events/2026/krafton-cct-real-cricket/01.webp',
+      images: [
+        '/images/events/2026/krafton-cct-real-cricket/01.webp',
+        '/images/events/2026/krafton-cct-real-cricket/02.webp',
+        '/images/events/2026/krafton-cct-real-cricket/03.webp',
+        '/images/events/2026/krafton-cct-real-cricket/04.webp',
+        '/images/events/2026/krafton-cct-real-cricket/05.webp'
+      ],
+      galleryUrl: 'https://drive.google.com/drive/folders/1cwcz08_RKho0WuKTzRoSv6V56q0x4lIO',
+      actionType: 'drive',
+      actionUrl: 'https://drive.google.com/drive/folders/1cwcz08_RKho0WuKTzRoSv6V56q0x4lIO',
+      actionLabel: 'VIEW PHOTO GALLERY →',
+      partners: [
+        { name: 'KRAFTON', logo: '/partners/krafton-transparent.png' },
+        { name: 'Real Cricket' }
+      ],
       participantCount: null
     },
     {
-      id: 'krafton-esports-2026',
-      year: '2026',
+      id: 'krafton-cct-bgmi-2026',
+      year: 2026,
       shortDate: '19 FEB',
-      fullDate: '19th February 2026',
-      title: 'KRAFTON Esports Event',
-      shortTitle: 'KRAFTON',
-      category: 'Competitive Gaming & Community Engagement',
-      description: 'A KRAFTON-powered esports activation that brought the gaming ecosystem closer to the CBIT student community. The event focused on competitive gaming, student participation and creating awareness around professional esports. It provided students with an opportunity to engage directly with a major gaming industry brand and experience esports beyond regular campus tournaments.',
-      image: '/events/krafton-esports-2026.jpg',
+      date: '19 February 2026',
+      fullDate: '19 February 2026',
+      title: 'Krafton CCT BGMI',
+      shortTitle: 'Krafton CCT BGMI',
+      category: 'Publisher Collegiate Esports Activation',
+      description: 'A publisher-backed collegiate esports tournament conducted at CBIT in partnership with KRAFTON. The activation brought competitive BGMI lobby battles directly to campus, fostering collegiate circuits and esports awareness.',
+      thumbnail: '/images/events/2026/krafton-cct-bgmi/01.webp',
+      image: '/images/events/2026/krafton-cct-bgmi/01.webp',
+      images: [
+        '/images/events/2026/krafton-cct-bgmi/01.webp',
+        '/images/events/2026/krafton-cct-bgmi/02.webp',
+        '/images/events/2026/krafton-cct-bgmi/03.webp',
+        '/images/events/2026/krafton-cct-bgmi/04.webp',
+        '/images/events/2026/krafton-cct-bgmi/05.webp'
+      ],
+      galleryUrl: 'https://drive.google.com/drive/folders/16GG6c6nD2Shzb9iiaTXzJadF0UbkZe-f',
+      actionType: 'drive',
+      actionUrl: 'https://drive.google.com/drive/folders/16GG6c6nD2Shzb9iiaTXzJadF0UbkZe-f',
+      actionLabel: 'VIEW PHOTO GALLERY →',
       partners: [
-        { name: 'KRAFTON', logo: '/partners/krafton-transparent.png' }
+        { name: 'KRAFTON', logo: '/partners/krafton-transparent.png' },
+        { name: 'BGMI' }
       ],
       participantCount: null
     },
     {
       id: 'infinix-codm-2026',
-      year: '2026',
+      year: 2026,
       shortDate: '02 APR',
-      fullDate: '2nd April 2026',
-      title: 'INFINIX × Call of Duty Mobile',
-      shortTitle: 'INFINIX × CODM',
+      date: '2 April 2026',
+      fullDate: '2 April 2026',
+      title: 'Infinix × Call of Duty Mobile',
+      shortTitle: 'Infinix × CODM',
       category: 'Gaming Brand Activation',
-      description: 'A gaming-focused collaboration featuring INFINIX and Call of Duty, designed around competitive gameplay and student engagement. The activation connected a major smartphone brand with the college gaming community, creating an interactive environment where students could experience gaming-focused technology while participating in esports activities.',
-      image: '/events/infinix-codm-2026.jpg',
+      description: 'A smartphone-powered gaming activation combining high-refresh mobile performance with competitive Call of Duty Mobile matches, providing students with hands-on device testing, tournament brackets, and showcase play.',
+      thumbnail: '/images/events/2026/infinix-codm/01.webp',
+      image: '/images/events/2026/infinix-codm/01.webp',
+      images: [
+        '/images/events/2026/infinix-codm/01.webp',
+        '/images/events/2026/infinix-codm/02.webp',
+        '/images/events/2026/infinix-codm/03.webp',
+        '/images/events/2026/infinix-codm/04.webp',
+        '/images/events/2026/infinix-codm/05.webp'
+      ],
+      galleryUrl: 'https://drive.google.com/drive/folders/13Fe1q8o9Z_z5rqOK3arOXasKthx7EB6W',
+      actionType: 'drive',
+      actionUrl: 'https://drive.google.com/drive/folders/13Fe1q8o9Z_z5rqOK3arOXasKthx7EB6W',
+      actionLabel: 'VIEW PHOTO GALLERY →',
       partners: [
         { name: 'INFINIX', logo: '/partners/infinix-transparent.png' },
         { name: 'Call of Duty Mobile' }
@@ -108,14 +164,27 @@ export const PAST_EVENTS_BY_YEAR = {
     },
     {
       id: 'monster-bgmi-2026',
-      year: '2026',
+      year: 2026,
       shortDate: '08–10 APR',
-      fullDate: '8th–10th April 2026',
+      date: '8–10 April 2026',
+      fullDate: '8–10 April 2026',
       title: 'Monster × BGMI',
       shortTitle: 'Monster × BGMI',
-      category: 'Campus Gaming Activation',
-      description: 'A 3-day esports activation conducted at CBIT in collaboration with Monster Energy and BGMI. The first two days focused on student engagement and Monster Energy product distribution, while the third day featured a competitive BGMI tournament with live match screening for the campus audience. The event brought together 128 participants and created a high-energy gaming experience across the campus.',
-      image: '/events/monster-bgmi-2026.jpg',
+      category: 'Campus Gaming Activation & Invitational',
+      description: 'A three-day campus gaming activation conducted at CBIT in collaboration with Monster Energy and BGMI. The activation featured brand engagement, energy drink distribution, and a full competitive BGMI tournament with live on-campus screening.',
+      thumbnail: '/images/events/2026/monster-bgmi/01.webp',
+      image: '/images/events/2026/monster-bgmi/01.webp',
+      images: [
+        '/images/events/2026/monster-bgmi/01.webp',
+        '/images/events/2026/monster-bgmi/02.webp',
+        '/images/events/2026/monster-bgmi/03.webp',
+        '/images/events/2026/monster-bgmi/04.webp',
+        '/images/events/2026/monster-bgmi/05.webp'
+      ],
+      galleryUrl: 'https://drive.google.com/drive/folders/1V61lsTcKEvg4kfXhtF-TclcKArp4muru',
+      actionType: 'drive',
+      actionUrl: 'https://drive.google.com/drive/folders/1V61lsTcKEvg4kfXhtF-TclcKArp4muru',
+      actionLabel: 'VIEW PHOTO GALLERY →',
       partners: [
         { name: 'Monster Energy', logo: '/partners/monster-energy-transparent.png' },
         { name: 'BGMI' }
@@ -123,42 +192,109 @@ export const PAST_EVENTS_BY_YEAR = {
       participantCount: 128
     },
     {
-      id: 'ff-campus-league-2026',
-      year: '2026',
+      id: 'free-fire-campus-league-2026',
+      year: 2026,
       shortDate: '07 AUG',
-      fullDate: '7th August 2026',
+      date: '7 August 2026',
+      fullDate: '7 August 2026',
       title: 'Free Fire Campus League',
       shortTitle: 'FF Campus League',
-      category: 'Campus Esports Competition',
-      description: 'A campus-level esports competition organized by CBIT Esports Club, bringing together Free Fire players from the student community for competitive gameplay. The league provided students with a structured platform to compete, showcase their gaming skills, and interact with fellow gaming enthusiasts. Beyond the tournament itself, the event helped strengthen the campus esports community and demonstrated CBIT Esports\' ability to organize and manage competitive gaming events.',
-      image: '/events/ff-campus-league-2026.jpg',
+      category: 'Campus Esports Championship',
+      description: 'A campus-wide league organized by CBIT Esports Club, providing student teams with a structured stage to compete, refine squad coordination, and showcase grassroots mobile battle royale mastery.',
+      thumbnail: '/images/events/2026/free-fire-campus-league/01.webp',
+      image: '/images/events/2026/free-fire-campus-league/01.webp',
+      images: [
+        '/images/events/2026/free-fire-campus-league/01.webp',
+        '/images/events/2026/free-fire-campus-league/02.webp',
+        '/images/events/2026/free-fire-campus-league/03.webp',
+        '/images/events/2026/free-fire-campus-league/04.webp',
+        '/images/events/2026/free-fire-campus-league/05.webp'
+      ],
+      galleryUrl: 'https://drive.google.com/drive/folders/1X1RPKwqfmhaZDEpXll8VgjD_kzTvcXzO',
+      actionType: 'drive',
+      actionUrl: 'https://drive.google.com/drive/folders/1X1RPKwqfmhaZDEpXll8VgjD_kzTvcXzO',
+      actionLabel: 'VIEW PHOTO GALLERY →',
       partners: [
         { name: 'Free Fire', logo: '/partners/free-fire-transparent.png' }
       ],
       participantCount: null
+    },
+    {
+      id: 'nrx-trinity-2026',
+      year: 2026,
+      shortDate: '11 AUG',
+      date: '11 August 2026',
+      fullDate: '11 August 2026',
+      title: 'NRX Trinity — Final Act',
+      shortTitle: 'NRX Trinity',
+      category: 'Collegiate Championship Finale',
+      description: 'The crowning climax of the NRX Trinity competitive series, bringing together top collegiate rosters for a high-intensity grand final showdown on campus.',
+      thumbnail: null,
+      image: null,
+      images: [],
+      galleryUrl: null,
+      partners: [],
+      participantCount: null,
+      actionType: 'instagram',
+      actionUrl: 'https://www.instagram.com/stories/highlights/18067450556523828/',
+      actionLabel: 'VIEW EVENT HIGHLIGHTS →'
     }
   ],
   '2025': [
     {
       id: 'hp-omen-experience-zone-2025',
-      year: '2025',
+      year: 2025,
       shortDate: '13–14 AUG',
-      fullDate: '13th–14th August 2025',
+      date: '13–14 August 2025',
+      fullDate: '13–14 August 2025',
       title: 'HP OMEN Experience Zone',
       shortTitle: 'HP OMEN Zone',
       category: 'Gaming Experience & Product Engagement',
-      description: 'A gaming experience activation centred around HP OMEN, giving students an opportunity to engage with gaming hardware and the broader PC-gaming ecosystem. The experience was designed to combine product interaction with gaming and student engagement, helping connect the brand directly with a young gaming audience.',
-      image: '/events/hp-omen-2025.jpg',
+      description: 'A two-day gaming experience activation centered around HP OMEN hardware at CBIT. Students engaged directly with high-performance gaming rigs, testing peripherals and competing in on-site community exhibition matches.',
+      thumbnail: '/images/events/2025/hp-omen/01.webp',
+      image: '/images/events/2025/hp-omen/01.webp',
+      images: [
+        '/images/events/2025/hp-omen/01.webp'
+      ],
+      galleryUrl: null,
       partners: [
         { name: 'HP OMEN', logo: '/partners/hp-omen-transparent.png' }
       ],
-      participantCount: null
+      participantCount: null,
+      actionType: 'highlights',
+      actionUrl: '/collaborate',
+      actionLabel: 'VIEW EVENT HIGHLIGHTS →'
+    },
+    {
+      id: 'act-fibernet-bgmi-2025',
+      year: 2025,
+      shortDate: '11 OCT',
+      date: '11 October 2025',
+      fullDate: '11 October 2025',
+      title: 'ACT Fibernet X BGMI Showdown',
+      shortTitle: 'ACT × BGMI',
+      category: 'Campus Battle Royale Invitational',
+      description: 'A high-intensity campus esports tournament powered by ACT Fibernet, delivering low-latency competitive gaming and tournament bracket play for collegiate rosters.',
+      thumbnail: null,
+      image: null,
+      images: [],
+      galleryUrl: null,
+      partners: [
+        { name: 'ACT Fibernet' },
+        { name: 'BGMI' }
+      ],
+      participantCount: null,
+      actionType: 'instagram',
+      actionUrl: 'https://www.instagram.com/stories/highlights/18044780885404478/',
+      actionLabel: 'VIEW EVENT HIGHLIGHTS →'
     }
-  ]
+  ],
+  '2024': [],
+  '2023': []
 };
 
-// Available years in descending chronological order
-export const AVAILABLE_YEARS = Object.keys(PAST_EVENTS_BY_YEAR).sort((a, b) => b.localeCompare(a));
+// Available years in descending chronological order: ['2026', '2025', '2024', '2023']
+export const AVAILABLE_YEARS = ['2026', '2025', '2024', '2023'];
 
 // Flattened helper for general use
 export const PAST_EVENTS = Object.values(PAST_EVENTS_BY_YEAR).flat();
