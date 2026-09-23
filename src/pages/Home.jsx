@@ -344,36 +344,45 @@ export default function Home() {
 
       {/* ====================================================================
           6. PARTNERS / COLLABORATIONS
-          Restrained, credible, real partners (HP OMEN, Buffalo Wild Wings)
+          Gateway to the dedicated Collaborate page
           ==================================================================== */}
       <section className="section section-alt" aria-labelledby="partners-heading">
         <div className="container">
           <div className="section-header centered">
-            <span className="section-badge">Credibility & Network</span>
-            <h2 id="partners-heading" className="section-heading">Past Collaborations & Partners</h2>
-            <p className="section-subheading text-center">
-              We collaborate with hardware manufacturers, gaming venues, and student organizations to execute premier gaming events.
+            <span className="section-badge">Partnerships</span>
+            <h2 id="partners-heading" className="section-heading">Build With CBIT Esports</h2>
+            <p className="section-subheading text-center" style={{ maxWidth: '640px', margin: '0 auto 32px auto' }}>
+              We collaborate with hardware manufacturers, endemic gaming brands, and student organizations to execute premier campus gaming events and reach an engaged collegiate audience.
             </p>
           </div>
 
-          <div className="partners-grid">
-            {ALL_PARTNERS.map((partner) => (
-              <div key={partner.name} className="partner-card">
-                <div className="partner-badge">{partner.category}</div>
-                <h3 className="partner-name">{partner.name}</h3>
-                <p className="partner-note">{partner.note}</p>
-                <span className="partner-year">{partner.year}</span>
+          <div className="partner-cta-row" style={{ marginBottom: '32px', flexDirection: 'column', alignItems: 'center', textAlign: 'center', padding: '40px 24px' }}>
+            <div style={{ display: 'flex', gap: '24px', flexWrap: 'wrap', justifyContent: 'center', marginBottom: '24px' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                <span style={{ fontSize: '28px', fontWeight: '800', color: 'var(--accent-gold)' }}>7K+</span>
+                <span style={{ fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--text-muted)', fontWeight: '600' }}>Students</span>
               </div>
-            ))}
-          </div>
-
-          <div className="partner-cta-row">
-            <p className="partner-cta-text">
-              Interested in organizing a campus tournament or sponsoring our next esports LAN?
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                <span style={{ fontSize: '28px', fontWeight: '800', color: 'var(--accent-gold)' }}>6K+</span>
+                <span style={{ fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--text-muted)', fontWeight: '600' }}>Event Footfall</span>
+              </div>
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                <span style={{ fontSize: '28px', fontWeight: '800', color: 'var(--accent-gold)' }}>2.5K+</span>
+                <span style={{ fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--text-muted)', fontWeight: '600' }}>Social Presence</span>
+              </div>
+            </div>
+            
+            <p className="partner-cta-text" style={{ marginBottom: '24px', fontSize: '16px' }}>
+              Interested in organizing a campus tournament, sponsoring our next LAN, or activating your product?
             </p>
-            <Link to="/collaborate" className="btn btn-secondary">
-              Partner With Us
-            </Link>
+            <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', justifyContent: 'center' }}>
+              <Link to="/collaborate" className="btn btn-primary">
+                Explore Partnership Opportunities
+              </Link>
+              <Link to="/register" className="btn btn-secondary">
+                View Current Events
+              </Link>
+            </div>
           </div>
         </div>
       </section>
