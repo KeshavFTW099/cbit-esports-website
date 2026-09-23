@@ -1,0 +1,400 @@
+/* ==========================================================================
+   CBIT ESPORTS - COLLABORATE PAGE SPECIFIC STYLES
+   ========================================================================== */
+
+.collaborate-page .collab-section {
+  padding: var(--space-xl) 0;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.collaborate-page .collab-section:last-child {
+  border-bottom: none;
+}
+
+.collaborate-page .section-alt-box {
+  background-color: var(--bg-secondary);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl) var(--space-lg);
+  margin: var(--space-lg) 0;
+}
+
+/* Metrics Grid */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+}
+
+.metric-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-lg);
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-sm);
+  transition: var(--transition-fast);
+}
+
+.metric-card:hover {
+  border-color: var(--border-hover);
+}
+
+.metric-value {
+  font-size: var(--text-4xl);
+  font-weight: var(--weight-extrabold);
+  color: var(--accent-gold);
+  margin-bottom: 4px;
+}
+
+.metric-label {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-badge);
+}
+
+/* Models Grid */
+.models-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-md);
+}
+
+.model-item {
+  padding: var(--space-lg);
+  border-left: 2px solid var(--accent-gold-dark);
+  background-color: var(--bg-card);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.model-title {
+  font-size: var(--text-lg);
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  font-weight: var(--weight-semibold);
+}
+
+.model-desc {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: var(--leading-body);
+}
+
+/* Capabilities Cloud */
+.capabilities-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.capability-tag {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-card);
+  padding: 10px 16px;
+  border-radius: 40px;
+  font-size: var(--text-sm);
+  color: var(--text-primary);
+  transition: var(--transition-fast);
+}
+
+.capability-tag:hover {
+  border-color: var(--accent-gold-border);
+  background-color: var(--accent-gold-subtle);
+  color: var(--accent-gold);
+}
+
+/* Process Timeline */
+.process-timeline {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+
+.process-step {
+  display: flex;
+  flex-direction: column;
+}
+
+.process-marker {
+  font-family: monospace;
+  font-size: var(--text-sm);
+  font-weight: var(--weight-bold);
+  color: var(--accent-gold);
+  background-color: var(--accent-gold-subtle);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-bottom: var(--space-sm);
+  border: 1px solid var(--accent-gold-border);
+}
+
+.process-title {
+  font-size: var(--text-lg);
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.process-desc {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: var(--leading-body);
+}
+
+/* Events CTA Row */
+.events-cta-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+}
+
+.event-cta-box {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-card);
+  padding: var(--space-xl);
+  border-radius: var(--radius-sm);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Deck CTA Panel */
+.deck-cta-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-primary) 100%);
+  border: 1px solid var(--border-card);
+  padding: var(--space-xl);
+  border-radius: var(--radius-sm);
+}
+
+.deck-cta-content {
+  max-width: 60%;
+}
+
+.deck-cta-title {
+  font-size: var(--text-2xl);
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.deck-cta-desc {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: var(--leading-body);
+}
+
+/* FAQ */
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+}
+
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: var(--space-md) 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  font-size: var(--text-lg);
+  color: var(--text-primary);
+  cursor: pointer;
+  outline: none;
+}
+
+.faq-icon {
+  color: var(--accent-gold);
+  font-weight: var(--weight-bold);
+  font-size: var(--text-xl);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: var(--leading-body);
+}
+
+.faq-item.open .faq-answer {
+  max-height: 200px;
+  padding-bottom: var(--space-md);
+}
+
+/* Form Styles */
+.collab-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.form-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+}
+
+.form-group label {
+  display: block;
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+  width: 100%;
+  padding: 12px 14px;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-card);
+  border-radius: 4px;
+  color: var(--text-primary);
+  font-size: 14px;
+  outline: none;
+  transition: var(--transition-fast);
+  font-family: inherit;
+}
+
+.form-group input:focus, 
+.form-group select:focus, 
+.form-group textarea:focus {
+  border-color: var(--accent-gold-border);
+}
+
+.form-group input:disabled, 
+.form-group select:disabled, 
+.form-group textarea:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.file-hint {
+  display: block;
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.file-input {
+  padding: 8px !important;
+  color: var(--text-secondary) !important;
+}
+
+.file-input::file-selector-button {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-card);
+  color: var(--text-primary);
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 12px;
+}
+
+.submit-btn {
+  margin-top: var(--space-sm);
+}
+
+.form-feedback-box {
+  padding: 32px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.form-feedback-box.success {
+  background-color: var(--accent-gold-subtle);
+  border: 1px solid var(--accent-gold-border);
+}
+
+.form-feedback-box.error {
+  background-color: rgba(239, 68, 68, 0.05);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.feedback-icon {
+  font-size: 32px;
+  color: var(--accent-gold);
+  display: block;
+  margin-bottom: 12px;
+}
+
+.feedback-title {
+  font-size: var(--text-xl);
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.feedback-desc {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+}
+
+/* Responsiveness */
+@media (max-width: 900px) {
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .process-timeline {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .deck-cta-panel {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--space-lg);
+  }
+  
+  .deck-cta-content {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .metrics-grid,
+  .models-grid,
+  .events-cta-row,
+  .form-grid-2 {
+    grid-template-columns: 1fr;
+  }
+  
+  .process-timeline {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .process-step {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--space-md);
+  }
+  
+  .process-marker {
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+  
+  .page-hero-title {
+    font-size: 28px;
+  }
+}
