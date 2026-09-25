@@ -1,7 +1,77 @@
 // Structured real event data for CBIT Esports
 // Sourced directly from official CBIT Esports Club records and confirmed activations
 
-export const UPCOMING_EVENTS = [];
+export const UPCOMING_EVENTS = [
+  {
+    id: 'bmsd-event-2026',
+    title: 'BMSD Event',
+    shortTitle: 'BMSD Event',
+    category: 'Collegiate Campus Event',
+    status: 'REGISTRATION OPEN',
+    date: '26th & 27th September',
+    dates: '26th & 27th September',
+    location: 'Near CBIT / MGIT Colleges',
+    fee: 'ABSOLUTELY FREE (No Registration Fee)',
+    teamSize: 'Solo / Student Entry',
+    eligibility: 'Open to valid CBIT & MGIT students',
+    shortDescription: 'Get ready to be a part of the BMSD Event happening near CBIT/MGIT colleges on 26th & 27th September! Free entry for CBIT & MGIT students with valid college ID.',
+    thumbnail: '/images/events/2026/bmsd-event/thumbnail.jpg',
+    image: '/images/events/2026/bmsd-event/thumbnail.jpg',
+    featuredImage: '/images/events/2026/bmsd-event/thumbnail.jpg',
+    googleFormUrl: 'https://forms.gle/FcG3U6qVcoLPXHeL6',
+    googleFormSubmitUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSdr2t4LMTAmyB0S2xZp5SmWsOznhNP5QRbwvS-jTB7KQj4W-g/formResponse',
+    formFields: [
+      {
+        id: 'fullName',
+        label: 'Full Name',
+        type: 'text',
+        placeholder: 'Enter your full name',
+        required: true,
+        entryField: 'entry.1804478088'
+      },
+      {
+        id: 'collegeName',
+        label: 'College Name',
+        type: 'radio',
+        options: ['CBIT', 'MGIT'],
+        required: true,
+        entryField: 'entry.1447808854'
+      },
+      {
+        id: 'rollNumber',
+        label: 'Roll Number / Student ID',
+        type: 'text',
+        placeholder: 'e.g. 160122733000',
+        required: true,
+        entryField: 'entry.1806745055'
+      },
+      {
+        id: 'email',
+        label: 'Email Address',
+        type: 'email',
+        placeholder: 'your.email@gmail.com',
+        required: true,
+        entryField: 'entry.1345678901'
+      },
+      {
+        id: 'phone',
+        label: 'Phone / WhatsApp Number',
+        type: 'tel',
+        placeholder: '10-digit mobile number',
+        required: true,
+        entryField: 'entry.1987654321'
+      },
+      {
+        id: 'yearOfStudy',
+        label: 'Year of Study',
+        type: 'select',
+        options: ['1st Year', '2nd Year', '3rd Year', '4th Year'],
+        required: true,
+        entryField: 'entry.1234567890'
+      }
+    ]
+  }
+];
 
 export const PAST_EVENTS_BY_YEAR = {
   '2026': [

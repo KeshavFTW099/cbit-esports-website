@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { CLUB_DETAILS, WHAT_WE_DO } from '../data/clubInfo';
+import { UPCOMING_EVENTS } from '../data/events';
 import CurrentSpotlight from '../components/CurrentSpotlight';
 import PastEventsCarousel from '../components/PastEventsCarousel';
 import './Home.css';
@@ -152,9 +153,9 @@ export default function Home() {
 
       {/* ====================================================================
           2. CURRENT SPOTLIGHT
-          Editorial empty state with direct Past Events gateway
+          Active live event banner for BMSD Event
           ==================================================================== */}
-      <CurrentSpotlight active={false} />
+      <CurrentSpotlight active={true} event={UPCOMING_EVENTS[0]} />
 
       {/* ====================================================================
           3. ABOUT CBIT ESPORTS
